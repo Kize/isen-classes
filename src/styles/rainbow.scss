@@ -1,0 +1,15 @@
+.rainbow {
+  /* Standar Syntax */
+  animation: rainbow 2s infinite;
+}
+
+/* Standar Syntax */
+@keyframes rainbow {
+  0% {color: red;}
+  15% {color: indigo;}
+  30% {color: violet;}
+  45% {color: green;}
+  60% {color: blue;}
+  80% {color: orange;}
+  100% {color: yellow;}
+}
