@@ -21,8 +21,6 @@ export default {
   name: 'markup',
   created() {
     this.updateSlides();
-    this.mouseNavigation = false;
-
   },
   methods: {
     updateSlides() {
@@ -34,6 +32,9 @@ export default {
     updateURL() {
       this.$router.push(`/markup/${this.currentSlideIndex}/${this.step}`);
     },
+  },
+  props: {
+    mouseNavigation: false,
   },
   watch: {
     $route: 'updateSlides',

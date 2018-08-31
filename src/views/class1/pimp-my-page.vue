@@ -23,7 +23,6 @@ export default {
   name: 'pimp-my-page',
   created() {
     this.updateSlides();
-    this.mouseNavigation = false;
   },
   methods: {
     updateSlides() {
@@ -35,6 +34,9 @@ export default {
     updateURL() {
       this.$router.push(`/pimp-my-page/${this.currentSlideIndex}/${this.step}`);
     },
+  },
+  props: {
+    mouseNavigation: false,
   },
   watch: {
     $route: 'updateSlides',
