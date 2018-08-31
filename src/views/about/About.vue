@@ -51,7 +51,7 @@
       </div>
     </slide>
 
-    <slide :steps="5">
+    <slide enter='bounceInRight' leave='fadeOut' :steps="5">
       <h2>Interests</h2>
 
       <div class="list-container">
@@ -64,7 +64,7 @@
       </div>
     </slide>
 
-    <slide :steps="4">
+    <slide enter='bounceInRight' leave='fadeOut' :steps="4">
       <h2>Contact</h2>
 
       <div class="list-container">
@@ -83,7 +83,7 @@
       </div>
     </slide>
 
-    <slide>
+    <slide enter='bounceInRight' leave='fadeOut'>
       <h2>
         <a target="_blank" href="http://isen-cir-2.surge.sh">isen-cir-2.surge.sh</a>
       </h2>
@@ -134,10 +134,6 @@ export default {
   @import '../../styles/colors';
   @import '../../styles/slide';
   @import '../../styles/slideshow';
-
-  h1 {
-    margin-top: 0.1em;
-  }
 
   .welcome-dog {
     width: 800px;

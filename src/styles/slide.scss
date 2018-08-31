@@ -9,7 +9,15 @@
 
     ul {
       text-align: left;
+
+      li {
+        margin-bottom: 0.5em;
+      }
     }
+  }
+
+  h1, h2 {
+    margin-top: 0.1em;
   }
 
   .no-dot-list {
