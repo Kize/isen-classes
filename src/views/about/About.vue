@@ -1,7 +1,7 @@
 <template>
   <div class="eg-slideshow" :mouseNavigation="false">
     <slide leave='fadeOut' :steps="2">
-      <h1 v-if="step === 2">Bienvenue</h1>
+      <h1 v-if="step === 2">Welcome</h1>
 
       <img class="welcome-dog" src="./assets/welcome.gif" v-if="step === 2">
     </slide>
@@ -14,10 +14,80 @@
       <img class="img-study zenika" src="./assets/zenika.jpg" v-if="step >= 4">
     </slide>
 
-    <slide>
+    <slide enter='bounceInRight' leave='fadeOut' :steps="4">
+      <h2>Specialties</h2>
 
+      <div class="list-container">
+        <ul>
+          <li v-if="step >= 2">Web Technologies</li>
+          <li v-if="step >= 3">User Experience</li>
+          <li v-if="step >= 4">User Interface</li>
+        </ul>
+      </div>
     </slide>
 
+    <slide enter='bounceInRight' leave='fadeOut' :steps="6">
+      <h2>Skills</h2>
+
+      <div class="list-container">
+        <ul>
+          <li v-if="step >= 2">HTML</li>
+          <li v-if="step >= 3">CSS</li>
+          <li v-if="step >= 4">JavaScript</li>
+          <li v-if="step >= 5">TypeScript</li>
+          <li v-if="step >= 6">Python</li>
+        </ul>
+      </div>
+    </slide>
+
+    <slide enter='bounceInRight' leave='fadeOut' :steps="3">
+      <h2>Projects</h2>
+
+      <div class="list-container">
+        <ul>
+          <li v-if="step >= 2">Gamepad Handler</li>
+          <li v-if="step >= 3">Music in the browzzzer</li>
+        </ul>
+      </div>
+    </slide>
+
+    <slide :steps="5">
+      <h2>Interests</h2>
+
+      <div class="list-container">
+        <ul>
+          <li v-if="step >= 2">GIFs</li>
+          <li v-if="step >= 3">Rubik's cube</li>
+          <li v-if="step >= 4">Rock</li>
+          <li v-if="step >= 5">Browser APIs</li>
+        </ul>
+      </div>
+    </slide>
+
+    <slide :steps="4">
+      <h2>Contact</h2>
+
+      <div class="list-container">
+        <ul class="contact-list no-dot-list">
+          <li v-if="step >= 2">
+            <a class="mail-link contact-link"
+               href="mailto:alban.delcourt+isen@gmail.com">alban.delcourt+isen@gmail.com</a>
+          </li>
+          <li v-if="step >= 3">
+            <a class="github-link contact-link" href="https://github.com/Kize">Github</a>
+          </li>
+          <li v-if="step >= 4">
+            <a class="twitter-link contact-link" href="https://twitter.com/Alban_Delcourt">Twitter</a>
+          </li>
+        </ul>
+      </div>
+    </slide>
+
+    <slide>
+      <h2>
+        <a target="_blank" href="http://isen-cir-2.surge.sh">isen-cir-2.surge.sh</a>
+      </h2>
+    </slide>
   </div>
 </template>
 
@@ -91,6 +161,31 @@ export default {
     &.zenika {
       top: 62%;
       left: 39%;
+    }
+  }
+
+  .contact-list {
+
+    li {
+      margin-bottom: 1em;
+    }
+  }
+
+  .contact-link {
+    background: no-repeat left center;
+    background-size: contain;
+    padding-left: 1.5em;
+    font-size: 1.5em;
+    margin-bottom: 0.7em;
+
+    &.mail-link {
+      background-image: url('./assets/gmail.png');
+    }
+    &.github-link {
+      background-image: url('./assets/github.png');
+    }
+    &.twitter-link {
+      background-image: url('./assets/twitter.png');
     }
   }
 </style>

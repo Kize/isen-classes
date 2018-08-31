@@ -1,26 +1,19 @@
-.slide {
+.eg-slide {
   display: flex;
   flex-flow: column;
   height: 100%;
   align-items: center;
 
-  h2 {
-    flex: 0 1 auto;
-    margin-top: 0.2em;
-    margin-bottom: 0;
+  .list-container {
+    display: flex;
+
+    ul {
+      text-align: left;
+    }
   }
 
-  .content {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-
-    img {
-      display: block;
-      margin: -10% auto 0 auto;
-    }
+  .no-dot-list {
+    list-style: none;
   }
 
   .snippet  {
@@ -35,24 +28,4 @@
       font-size: 27px;
     }
   }
-
-  .synth {
-    width: 1000px;
-    margin: 0 auto;
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    .controls {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-
-      .control {
-        margin-right: 5px;
-      }
-    }
-  }
-
 }
