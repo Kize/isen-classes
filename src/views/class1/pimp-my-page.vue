@@ -24,7 +24,6 @@ export default {
   created() {
     this.updateSlides();
     this.mouseNavigation = false;
-
   },
   methods: {
     updateSlides() {

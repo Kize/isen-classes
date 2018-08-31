@@ -14,6 +14,7 @@
 
 <script>
 import eagle from 'eagle.js';
+import { initGamepad, resetGamepad } from '../../utils/gamepad-service';
 
 export default {
   mixins: [
@@ -22,8 +23,8 @@ export default {
   name: 'hello-world',
   created() {
     this.updateSlides();
-    this.mouseNavigation = false;
 
+    initGamepad(this.nextStep, this.previousStep);
   },
   methods: {
     updateSlides() {
@@ -36,10 +37,16 @@ export default {
       this.$router.push(`/hello-world/${this.currentSlideIndex}/${this.step}`);
     },
   },
+  props: {
+    mouseNavigation: false,
+  },
   watch: {
     $route: 'updateSlides',
     step: 'updateURL',
     currentSlideIndex: 'updateURL',
+  },
+  destroyed() {
+    resetGamepad();
   },
 };
 </script>
