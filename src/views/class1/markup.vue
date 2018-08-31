@@ -1,6 +1,6 @@
 <template>
   <div class="eg-slideshow">
-    <slide :mouseNavigation="false" leave='fadeOut'>
+    <slide leave='fadeOut'>
       <h1>Tag, you're it !</h1>
     </slide>
 
@@ -19,6 +19,11 @@ export default {
     eagle.slideshow,
   ],
   name: 'markup',
+  created() {
+    this.updateSlides();
+    this.mouseNavigation = false;
+
+  },
   methods: {
     updateSlides() {
       this.currentSlideIndex = +this.$route.params.slide;

@@ -5,7 +5,7 @@ import Home from './views/Home.vue';
 Vue.use(Router);
 
 export default new Router({
-  mode: 'hash',
+  mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
@@ -14,9 +14,13 @@ export default new Router({
       component: Home,
     },
     {
+      path: '/about',
+      redirect: '/about/1/1',
+    },
+    {
       path: '/about/:slide/:step',
       name: 'about',
-      component: () => import('./views/About.vue'),
+      component: () => import('./views/about/About.vue'),
     },
     {
       path: '/template',
@@ -26,14 +30,26 @@ export default new Router({
 
     // CLASS 1
     {
+      path: '/hello-world',
+      redirect: '/hello-world/1/1',
+    },
+    {
       path: '/hello-world/:slide/:step',
       name: 'hello-world',
       component: () => import('./views/class1/hello-world.vue'),
     },
     {
+      path: '/markup',
+      redirect: '/markup/1/1',
+    },
+    {
       path: '/markup/:slide/:step',
       name: 'markup',
       component: () => import('./views/class1/markup.vue'),
+    },
+    {
+      path: '/pimp-my-page',
+      redirect: '/pimp-my-page/1/1',
     },
     {
       path: '/pimp-my-page/:slide/:step',

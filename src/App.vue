@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -21,5 +21,9 @@
     top: 2em;
     left: 2em;
     z-index: 100;
+
+    img {
+      width: 50%;
+    }
   }
 </style>

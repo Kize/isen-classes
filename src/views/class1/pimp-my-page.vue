@@ -1,9 +1,9 @@
 <template>
   <div class="eg-slideshow">
-    <slide :mouseNavigation="false" leave='fadeOut'>
+    <slide leave='fadeOut'>
       <h1 class="rainbow">Pimp my page ...</h1>
 
-      <img src="./pimp-my-car.webp"/>
+      <img src="./assets/pimp-my-page.webp"/>
     </slide>
 
     <slide enter='bounceInRight' leave='fadeOut'>
@@ -21,6 +21,11 @@ export default {
     eagle.slideshow,
   ],
   name: 'pimp-my-page',
+  created() {
+    this.updateSlides();
+    this.mouseNavigation = false;
+
+  },
   methods: {
     updateSlides() {
       this.currentSlideIndex = +this.$route.params.slide;

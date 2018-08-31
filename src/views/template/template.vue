@@ -19,6 +19,11 @@ export default {
     eagle.slideshow,
   ],
   name: 'template',
+  created() {
+    this.updateSlides();
+    this.mouseNavigation = false;
+
+  },
   methods: {
     updateSlides() {
       this.currentSlideIndex = +this.$route.params.slide;

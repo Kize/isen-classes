@@ -1,11 +1,12 @@
 <template>
   <div class="eg-slideshow">
-    <slide :mouseNavigation="false" leave='fadeOut'>
+    <slide leave='fadeOut'>
       <h1>Web, hello world.</h1>
+      <img class="old-computer-image" src="./assets/old-computer.png"/>
     </slide>
 
     <slide enter='bounceInRight' leave='fadeOut'>
-      <h1>Page 2</h1>
+      <h2>Page 2</h2>
     </slide>
 
   </div>
@@ -19,6 +20,11 @@ export default {
     eagle.slideshow,
   ],
   name: 'hello-world',
+  created() {
+    this.updateSlides();
+    this.mouseNavigation = false;
+
+  },
   methods: {
     updateSlides() {
       this.currentSlideIndex = +this.$route.params.slide;
@@ -42,4 +48,8 @@ export default {
   @import '../../styles/colors';
   @import '../../styles/slide';
   @import '../../styles/slideshow';
+
+  .old-computer-image {
+    max-height: 800px;
+  }
 </style>

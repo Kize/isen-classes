@@ -100,8 +100,8 @@ export default {
     .courses {
       display: flex;
       background-color: $bg-primary;
-      border: 1px solid $deep-aqua;
-      border-radius: 8px;
+      border: 1px solid $ui-bg;
+      border-radius: 4px;
       padding: 0 24px;
 
       .courses-left, .courses-right {
