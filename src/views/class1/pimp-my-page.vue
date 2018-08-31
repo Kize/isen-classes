@@ -15,6 +15,7 @@
 
 <script>
 import eagle from 'eagle.js';
+import { initGamepad, resetGamepad } from '../../utils/gamepad-service';
 
 export default {
   mixins: [
@@ -23,6 +24,8 @@ export default {
   name: 'pimp-my-page',
   created() {
     this.updateSlides();
+
+    initGamepad(this.nextStep, this.previousStep);
   },
   methods: {
     updateSlides() {
@@ -42,6 +45,9 @@ export default {
     $route: 'updateSlides',
     step: 'updateURL',
     currentSlideIndex: 'updateURL',
+  },
+  destroyed() {
+    resetGamepad();
   },
 };
 </script>
