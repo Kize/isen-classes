@@ -174,10 +174,6 @@ export default {
     }
   }
 
-  .color-accent {
-    color: $meadow;
-  }
-
   .slide-4 {
 
     img {

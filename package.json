@@ -12,6 +12,7 @@
     "animate.css": "^3.7.0",
     "eagle.js": "^0.3.0",
     "gamepad-handler": "2.0.0",
+    "highlight.js": "9.12.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   },

@@ -1,15 +1,21 @@
 import Vue from 'vue';
 
-import Eagle from 'eagle.js';
+import Eagle, { Options } from 'eagle.js';
 // import eagle.js default styles
 import 'eagle.js/dist/eagle.css';
 // import animate.css for slide transition
 import 'animate.css';
 
+// highlight.js style
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github.css';
+
 import App from './App.vue';
 import router from './router';
 
 Vue.config.productionTip = false;
+
+Options.hljs = hljs;
 
 new Vue({
   router,
