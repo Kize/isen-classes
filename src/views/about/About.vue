@@ -1,12 +1,12 @@
 <template>
   <div class="eg-slideshow" :mouseNavigation="false">
-    <slide leave='fadeOut' :steps="2">
+    <slide class="slide" leave='fadeOut' :steps="2">
       <h1 v-if="step === 2">Welcome</h1>
 
       <img class="welcome-dog" src="./assets/welcome.gif" v-if="step === 2">
     </slide>
 
-    <slide enter='bounceInRight' leave='fadeOut' :steps="4">
+    <slide class="slide" enter='bounceInRight' leave='fadeOut' :steps="4">
       <h2>Alban Delcourt</h2>
 
       <img class="img-study isen" src="./assets/isen.png" v-if="step >= 2">
@@ -14,7 +14,7 @@
       <img class="img-study zenika" src="./assets/zenika.jpg" v-if="step >= 4">
     </slide>
 
-    <slide enter='bounceInRight' leave='fadeOut' :steps="4">
+    <slide class="slide" enter='bounceInRight' leave='fadeOut' :steps="4">
       <h2>Specialties</h2>
 
       <div class="list-container">
@@ -26,7 +26,7 @@
       </div>
     </slide>
 
-    <slide enter='bounceInRight' leave='fadeOut' :steps="6">
+    <slide class="slide" enter='bounceInRight' leave='fadeOut' :steps="6">
       <h2>Skills</h2>
 
       <div class="list-container">
@@ -40,7 +40,7 @@
       </div>
     </slide>
 
-    <slide enter='bounceInRight' leave='fadeOut' :steps="3">
+    <slide class="slide" enter='bounceInRight' leave='fadeOut' :steps="3">
       <h2>Projects</h2>
 
       <div class="list-container">
@@ -51,7 +51,7 @@
       </div>
     </slide>
 
-    <slide enter='bounceInRight' leave='fadeOut' :steps="5">
+    <slide class="slide" enter='bounceInRight' leave='fadeOut' :steps="5">
       <h2>Interests</h2>
 
       <div class="list-container">
@@ -64,7 +64,7 @@
       </div>
     </slide>
 
-    <slide enter='bounceInRight' leave='fadeOut' :steps="4">
+    <slide class="slide" enter='bounceInRight' leave='fadeOut' :steps="4">
       <h2>Contact</h2>
 
       <div class="list-container">
@@ -83,7 +83,7 @@
       </div>
     </slide>
 
-    <slide enter='bounceInRight' leave='fadeOut'>
+    <slide class="slide" enter='bounceInRight' leave='fadeOut'>
       <h2>
         <a target="_blank" href="http://isen-cir-2.surge.sh">isen-cir-2.surge.sh</a>
       </h2>

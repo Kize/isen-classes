@@ -26,4 +26,8 @@
       width: 50%;
     }
   }
+
+  .eg-slide-content {
+    width: 75%;
+  }
 </style>

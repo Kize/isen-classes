@@ -16,7 +16,7 @@
               <router-link to="/markup/1/1">Tag, you're it !</router-link>
             </li>
             <li>
-              <router-link to="/pimp-my-page/1/1">Pimp my page ...</router-link>
+              <router-link to="/pimp-my-page/1/1">Pimp my page !</router-link>
             </li>
           </ul>
         </div>

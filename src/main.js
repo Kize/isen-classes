@@ -1,9 +1,8 @@
 import Vue from 'vue';
 
 import Eagle, { Options } from 'eagle.js';
-// import eagle.js default styles
+
 import 'eagle.js/dist/eagle.css';
-// import animate.css for slide transition
 import 'animate.css';
 
 // highlight.js style

@@ -1,10 +1,10 @@
 <template>
   <div class="eg-slideshow">
-    <slide :mouseNavigation="false" leave='fadeOut'>
+    <slide class="slide" :mouseNavigation="false" leave='fadeOut'>
       <h1>Hello world</h1>
     </slide>
 
-    <slide enter='bounceInRight' leave='fadeOut'>
+    <slide class="slide" enter='bounceInRight' leave='fadeOut'>
       <h1>Page 2</h1>
     </slide>
 

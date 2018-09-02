@@ -1,11 +1,11 @@
 <template>
   <div class="eg-slideshow">
-    <slide leave='fadeOut'>
+    <slide class="slide" leave='fadeOut'>
       <h1>Web, hello world.</h1>
       <img class="old-computer-image" src="./assets/old-computer.png"/>
     </slide>
 
-    <slide class="slide-1" enter='bounceInRight' leave='fadeOut' :steps="9">
+    <slide class="slide slide-1" enter='bounceInRight' leave='fadeOut' :steps="9">
       <h2>Nearly 30 years ago</h2>
 
       <div class="list-container">
@@ -22,7 +22,7 @@
       <img class="tim-image" src="./assets/tbl.jpg" v-if="step >= 4"/>
     </slide>
 
-    <slide class="slide-2" enter='bounceInRight' leave='fadeOut' :steps="9">
+    <slide class="slide slide-2" enter='bounceInRight' leave='fadeOut' :steps="9">
       <h2>Browsers</h2>
 
       <div class="list-container">
@@ -39,7 +39,7 @@
       </div>
     </slide>
 
-    <slide class="slide-3" enter='bounceInRight' leave='fadeOut' :steps="8">
+    <slide class="slide slide-3" enter='bounceInRight' leave='fadeOut' :steps="8">
       <h2>One to rule them all...</h2>
 
       <div class="list-container">
@@ -59,7 +59,7 @@
       </div>
     </slide>
 
-    <slide class="slide-4" enter='bounceInRight' leave='fadeOut' :steps="9">
+    <slide class="slide slide-4" enter='bounceInRight' leave='fadeOut' :steps="9">
       <h2>
         <span class="color-accent">C</span>ascading
         <span class="color-accent">S</span>tyle
@@ -83,7 +83,7 @@
       <img class="tada-img" src="./assets/tada.webp" v-if="step >= 8">
     </slide>
 
-    <slide class="slide-5" enter='bounceInRight' leave='fadeOut' :steps="9">
+    <slide class="slide slide-5" enter='bounceInRight' leave='fadeOut' :steps="9">
       <h2>Javascript</h2>
 
       <div class="list-container">
@@ -108,7 +108,7 @@
       <img src="./assets/brendan.jpg" class="brendan-img" v-if="step >= 4">
     </slide>
 
-    <slide class="slide-5" enter='bounceInRight' leave='fadeOut'>
+    <slide class="slide slide-6" enter='bounceInRight' leave='fadeOut'>
       <h2>Web Evolution</h2>
 
       <a href="http://evolutionofweb.appspot.com/?hl=en">Interactive map</a>

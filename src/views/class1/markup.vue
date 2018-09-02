@@ -1,12 +1,12 @@
 <template>
   <div class="eg-slideshow">
-    <slide class="slide-0" leave='fadeOut'>
+    <slide class="slide slide-0" leave='fadeOut'>
       <h1>Tag, you're it !</h1>
 
       <img src="./assets/html.gif">
     </slide>
 
-    <slide class="slide-1" enter='bounceInRight' leave='fadeOut' :steps="8">
+    <slide class="slide slide-1" enter='bounceInRight' leave='fadeOut' :steps="8">
       <h2>What is <span class="color-accent">HTML</span>?</h2>
 
 
@@ -27,7 +27,7 @@
       </div>
     </slide>
 
-    <slide class="slide-2" enter='bounceInRight' leave='fadeOut' :steps="2">
+    <slide class="slide slide-2" enter='bounceInRight' leave='fadeOut' :steps="2">
       <h2>How does it <span class="color-accent">look</span> ?</h2>
 
       <div class="snippet" v-if="step >= 2">
@@ -35,7 +35,7 @@
       </div>
     </slide>
 
-    <slide class="slide-3" enter='bounceInRight' leave='fadeOut' :steps="5">
+    <slide class="slide slide-3" enter='bounceInRight' leave='fadeOut' :steps="5">
       <h2>Let's add some attributes</h2>
 
       <div class="snippet" v-if="step >= 2">
@@ -49,77 +49,81 @@
       </div>
     </slide>
 
-    <slide class="slide-4" enter='bounceInRight' leave='fadeOut'>
+    <slide class="slide slide-4" enter='bounceInRight' leave='fadeOut'>
       <h2>Elements</h2>
 
       <img src="./assets/elements.gif">
     </slide>
 
-    <slide class="slide-5" enter='bounceInRight' leave='fadeOut' :steps="2">
+    <slide class="slide slide-5" enter='bounceInRight' leave='fadeOut' :steps="2">
       <h2>Block Elements</h2>
       <h3>Headings</h3>
 
       <eg-code-block v-if="step >= 2" lang="HTML">{{htmlCodeExample4}}</eg-code-block>
     </slide>
 
-    <slide class="slide-6" enter='bounceInRight' leave='fadeOut' :steps="2">
+    <slide class="slide slide-6" enter='bounceInRight' leave='fadeOut' :steps="2">
       <h2>Block Elements</h2>
       <h3>Lists</h3>
 
-      <eg-code-block class="list-code" v-if="step >= 2" lang="HTML">{{htmlCodeExample5}}</eg-code-block>
-      <div class="list-result" v-if="step >=2">
-        <ul>
-          <li>Leeloo</li>
-          <li>Korben Dallas</li>
-        </ul>
-        <ol>
-          <li>President Lindberg</li>
-          <li>Major Iceborg</li>
-        </ol>
-        <dl>
-          <dt>Humans</dt>
-          <dd>Korben Dallas race</dd>
-          <dt>Mangalores</dt>
-          <dd>Aknot race</dd>
-        </dl>
+      <div class="pure-g">
+        <div class="pure-u-2-5">
+          <eg-code-block v-if="step >= 2" lang="HTML">{{htmlCodeExample5}}</eg-code-block>
+        </div>
+        <div class="pure-u-3-5" v-if="step >=2">
+          <ul>
+            <li>Leeloo</li>
+            <li>Korben Dallas</li>
+          </ul>
+          <ol>
+            <li>President Lindberg</li>
+            <li>Major Iceborg</li>
+          </ol>
+          <dl>
+            <dt>Humans</dt>
+            <dd>Korben Dallas race</dd>
+            <dt>Mangalores</dt>
+            <dd>Aknot race</dd>
+          </dl>
+        </div>
       </div>
     </slide>
 
-    <slide class="slide-7" enter='bounceInRight' leave='fadeOut'>
+    <slide class="slide slide-7" enter='bounceInRight' leave='fadeOut'>
       <h2>Block Elements</h2>
       <h3>Other</h3>
 
       <eg-code-block lang="HTML">{{htmlCodeExample6}}</eg-code-block>
     </slide>
 
-    <slide class="slide-8" enter='bounceInRight' leave='fadeOut'>
+    <slide class="slide slide-8" enter='bounceInRight' leave='fadeOut'>
       <h2>Inline Elements</h2>
       <h3>Phrases</h3>
 
       <eg-code-block lang="HTML">{{htmlCodeExample7}}</eg-code-block>
     </slide>
 
-    <slide class="slide-9" enter='bounceInRight' leave='fadeOut'>
+    <slide class="slide slide-9" enter='bounceInRight' leave='fadeOut'>
       <h2>Inline Elements</h2>
       <h3>Computer phrase</h3>
 
       <eg-code-block lang="HTML">{{htmlCodeExample8}}</eg-code-block>
     </slide>
 
-    <slide class="slide-10" enter='bounceInRight' leave='fadeOut'>
+    <slide class="slide slide-10" enter='bounceInRight' leave='fadeOut'>
       <h2>Inline Elements</h2>
       <h3>Presentation phrase</h3>
 
       <eg-code-block lang="HTML">{{htmlCodeExample9}}</eg-code-block>
     </slide>
 
-    <slide class="slide-11" enter='bounceInRight' leave='fadeOut'>
+    <slide class="slide slide-11" enter='bounceInRight' leave='fadeOut'>
       <h2>Forms Elements</h2>
 
       <eg-code-block lang="HTML">{{htmlCodeExample10}}</eg-code-block>
     </slide>
 
-    <slide class="slide-12" enter='bounceInRight' leave='fadeOut'>
+    <slide class="slide slide-12" enter='bounceInRight' leave='fadeOut'>
       <h2>Forms Elements</h2>
 
       <eg-code-block class="form-code" lang="HTML">{{htmlCodeExample11}}</eg-code-block>
@@ -148,7 +152,7 @@
       </form>
     </slide>
 
-    <slide class="slide-13" enter='bounceInRight' leave='fadeOut'>
+    <slide class="slide slide-13" enter='bounceInRight' leave='fadeOut'>
       <h2>Tables</h2>
 
       <eg-code-block class="table-code" lang="HTML">{{htmlCodeExample12}}</eg-code-block>
@@ -183,7 +187,7 @@
       </div>
     </slide>
 
-    <slide class="slide-13" enter='bounceInRight' leave='fadeOut'>
+    <slide class="slide slide-13" enter='bounceInRight' leave='fadeOut'>
       <h2>Additional links</h2>
 
       <div class="list-container">
@@ -239,41 +243,32 @@ export default {
 </html>`,
       htmlCodeExample2: '<a href="http://www.donothingfor2minutes.com">Do nothing for 2 Minutes</a>',
       htmlCodeExample3: '<img src="./assets/parrot.gif" alt="a happy parrot animation" class="parrot-image">',
-      htmlCodeExample4: `
-
-        <h1>Fifth Element</h1>
-        <h2>Multipass!</h2>
-        <h3>Aziz, light!</h3>
-        <h4>Me fifth element - supreme being. Me protect you.</h4>
-        <h5>Boooooooom ba da booom</h5>
-        <h6>You wanna play it soft. We'll play it soft. You wanna play it hard. Let's play it hard.</h6>
-
-      `,
-      htmlCodeExample5: `
-
-        <ul>
-          <li>Leeloo</li>
-          <li>Korben Dallas</li>
-        </ul>
-        <ol>
-          <li>President Lindberg</li>
-          <li>Major Iceborg</li>
-        </ol>
-        <dl>
-          <dt>Humans</dt><dd>Korben Dallas race</dd>
-          <dt>Mangalores</dt><dd>Aknot race</dd>
-        </dl>
-
-      `,
-      htmlCodeExample6: `
-    <p>...</p>
-    <address>...</address>
-    <blockquote>...</blockquote>
-    <del>...</del>
-    <hr>
-    <ins>...</ins>
-    <noscript>...</noscript>
-    <pre>...</pre>`,
+      htmlCodeExample4: `<h1>Fifth Element</h1>
+<h2>Multipass!</h2>
+<h3>Aziz, light!</h3>
+<h4>Me fifth element - supreme being. Me protect you.</h4>
+<h5>Boooooooom ba da booom</h5>
+<h6>You wanna play it soft. We'll play it soft. You wanna play it hard. Let's play it hard.</h6>`,
+      htmlCodeExample5: `<ul>
+  <li>Leeloo</li>
+  <li>Korben Dallas</li>
+</ul>
+<ol>
+  <li>President Lindberg</li>
+  <li>Major Iceborg</li>
+</ol>
+<dl>
+  <dt>Humans</dt><dd>Korben Dallas race</dd>
+  <dt>Mangalores</dt><dd>Aknot race</dd>
+</dl>`,
+      htmlCodeExample6: `<p>...</p>
+<address>...</address>
+<blockquote>...</blockquote>
+<del>...</del>
+<hr>
+<ins>...</ins>
+<noscript>...</noscript>
+<pre>...</pre>`,
       htmlCodeExample7: `<abbr>...</abbr>
 <dfn>...</dfn>
 <em>...</em>
@@ -414,20 +409,11 @@ export default {
 
   .slide-6 {
 
-    .list-code, .list-result {
-      position: absolute;
-    }
+    .pure-g {
 
-    .list-code {
-      top: 40%;
-      left: 20%;
-      width: 35%;
-    }
-
-    .list-result {
-      top: 35%;
-      right: 21%;
-      text-align: left;
+      .pure-u-3-5 {
+        text-align: left;
+      }
     }
   }
 
