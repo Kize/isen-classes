@@ -171,7 +171,8 @@ export default {
 
       #block2 {
         border: 10px solid $bm-margin;
-        height: 100px;
+        height: 200px;
+        width: 200px;
       }
 
       #block3 {
@@ -206,6 +207,7 @@ export default {
       }
 
       .block0 {
+        border-left: 20px solid #293033;
 
         input {
           width: 200px;

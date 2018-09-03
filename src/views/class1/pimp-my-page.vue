@@ -78,6 +78,14 @@ p.important {
     </slide>
 
     <slide class="slide slide-6" enter='bounceInRight' leave='fadeOut'>
+      <h2>Displays</h2>
+
+      <div class="example-container">
+        <display-example></display-example>
+      </div>
+    </slide>
+
+    <slide class="slide slide-6" enter='bounceInRight' leave='fadeOut'>
       <h2>Flex box</h2>
 
       <div class="list-container">
@@ -132,9 +140,10 @@ import { initGamepad, resetGamepad } from '../../utils/gamepad-service';
 import BoxModel from './box-model.vue';
 import FloatExample from './float-example.vue';
 import PositionExample from './position-example.vue';
+import DisplayExample from "./display-example"
 
 export default {
-  components: { PositionExample, FloatExample, BoxModel },
+  components: { DisplayExample, PositionExample, FloatExample, BoxModel },
   mixins: [
     eagle.slideshow,
   ],
