@@ -32,7 +32,8 @@ button:hover { /* button elements being hovered by mouse pointers */ }
       <div class="pure-g">
         <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
           <div class="column-container">
-            <eg-code-block lang="css">/* CSS Examples */
+            <eg-code-block lang="html">{{htmlCodeExample1}}</eg-code-block>
+<eg-code-block lang="css">/* CSS code example */
 p {
   background: #EEEEEE;
   color: #111;
@@ -57,7 +58,7 @@ p.important {
       <h2>Box Model</h2>
 
       <div class="example-container">
-        <box-model></box-model>
+        <box-model-example></box-model-example>
       </div>
     </slide>
 
@@ -85,23 +86,49 @@ p.important {
       </div>
     </slide>
 
-    <slide class="slide slide-6" enter='bounceInRight' leave='fadeOut'>
-      <h2>Flex box</h2>
+    <slide class="slide slide-7" enter='bounceInRight' leave='fadeOut'>
+      <h2>Other displays</h2>
 
       <div class="list-container">
-        <ul>
-          <li></li>
+        <ul class="no-dot-list">
+          <li>
+            <a href="http://the-echoplex.net/flexyboxes/">Flex</a>
+          </li>
+          <li>
+            <a href="https://vue-grid-generator.netlify.com/">Grid</a>
+          </li>
         </ul>
       </div>
     </slide>
 
-    <slide class="slide slide-7" enter='bounceInRight' leave='fadeOut'>
-      <h2>Grid</h2>
+    <slide class="slide slide-8" enter='bounceInRight' leave='fadeOut' :steps="2">
+      <h2>Media Queries</h2>
 
-      <div class="list-container">
-        <ul>
-          <li></li>
-        </ul>
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
+          <div class="column-container">
+            <eg-code-block lang="css">img.rollin-racoon {
+  display:none;
+}
+
+@media screen and (min-width: 800px) {
+  img.rollin-racoon {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  img.rollin-racoon {
+    width: 750px;
+  }
+}</eg-code-block>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
+          <div class="column-container">
+            <img class="rollin-racoon" src="./assets/rollin-racoon.gif" v-if="step >= 2">
+          </div>
+        </div>
       </div>
     </slide>
 
@@ -126,7 +153,8 @@ p.important {
             <a href="https://alistapart.com/article/css-positioning-101">CSS Positionning 101 (A list apart)</a>
           </li>
           <li>
-            <a href="http://the-echoplex.net/flexyboxes/">Flexy Boxes</a>
+            <a href="https://css-tricks.com/fighting-the-space-between-inline-block-elements/">Fighting the Space
+              Between Inline Block Elements (CSS Tricks)</a>
           </li>
         </ul>
       </div>
@@ -137,13 +165,25 @@ p.important {
 <script>
 import eagle from 'eagle.js';
 import { initGamepad, resetGamepad } from '../../utils/gamepad-service';
-import BoxModel from './box-model.vue';
-import FloatExample from './float-example.vue';
-import PositionExample from './position-example.vue';
-import DisplayExample from "./display-example"
+import BoxModelExample from './css-examples/box-model-example.vue';
+import FloatExample from './css-examples/float-example.vue';
+import PositionExample from './css-examples/position-example.vue';
+import DisplayExample from './css-examples/display-example.vue';
 
 export default {
-  components: { DisplayExample, PositionExample, FloatExample, BoxModel },
+  components: {
+    DisplayExample,
+    PositionExample,
+    FloatExample,
+    BoxModelExample,
+  },
+  data() {
+    return {
+      htmlCodeExample1: `<!--HTML code example-->
+<p>Just a paragraph.</p>
+<p class="important">An important paragraph.</p>`,
+    };
+  },
   mixins: [
     eagle.slideshow,
   ],
@@ -194,6 +234,25 @@ export default {
     }
     p.important {
       border: 5px solid red;
+    }
+  }
+
+  .slide-8 {
+    img.rollin-racoon {
+      display:none;
+      max-width: none;
+    }
+
+    @media screen and (min-width: 800px) {
+      img.rollin-racoon {
+        display: block;
+      }
+    }
+
+    @media screen and (min-width: 1600px) {
+      img.rollin-racoon {
+        width: 750px;
+      }
     }
   }
 </style>

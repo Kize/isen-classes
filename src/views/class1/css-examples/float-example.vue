@@ -147,7 +147,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import '../../styles/colors';
+  @import '../../../styles/colors';
 
   .box-container {
 

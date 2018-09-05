@@ -231,7 +231,7 @@ export default {
   data() {
     return {
       htmlCodeExample1: `<!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <title>How does it look ?</title>
