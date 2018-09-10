@@ -21,6 +21,9 @@
     top: 2em;
     left: 2em;
     z-index: 100;
+    background-color: white;
+    padding: 4px 4px;
+    border-radius: 8px;
 
     img {
       width: 50%;

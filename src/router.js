@@ -56,5 +56,10 @@ export default new Router({
       name: 'pimp-my-page',
       component: () => import('./views/class1/pimp-my-page.vue'),
     },
+    {
+      path: '/tp1-tv-show',
+      name: 'TP1 - TV show',
+      component: () => import('./views/class1/tp-tv-show.vue'),
+    },
   ],
 });
