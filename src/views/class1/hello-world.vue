@@ -76,11 +76,12 @@
           <li v-if="step >= 7"><b>1996</b></li>
           <li v-if="step >= 9"><span class="color-accent css-tada"><b>CSS</b></span></li>
         </ul>
+
+        <img class="tada-img" src="./assets/tada.webp" v-if="step >= 8">
       </div>
 
       <img class="hakon-img" src="./assets/hakon.jpg" v-if="step >= 5">
       <img class="bert-img" src="./assets/bert.jpg" v-if="step >= 6">
-      <img class="tada-img" src="./assets/tada.webp" v-if="step >= 8">
     </slide>
 
     <slide class="slide slide-5" enter='bounceInRight' leave='fadeOut' :steps="9">
@@ -191,9 +192,13 @@ export default {
       right: 40%;
     }
 
+    .list-container {
+      position: relative;
+    }
+
     .tada-img {
-      top: 70%;
-      left: 15%;
+      left: -100px;
+      bottom: -75px;
     }
 
     .css-tada {

@@ -181,7 +181,9 @@ export default {
     return {
       htmlCodeExample1: `<!--HTML code example-->
 <p>Just a paragraph.</p>
-<p class="important">An important paragraph.</p>`,
+<p class="important">
+  An important paragraph.
+</p>`,
     };
   },
   mixins: [

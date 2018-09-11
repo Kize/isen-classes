@@ -9,7 +9,6 @@
     <slide class="slide slide-1" enter='bounceInRight' leave='fadeOut' :steps="8">
       <h2>What is <span class="color-accent">HTML</span>?</h2>
 
-
       <div class="list-container">
         <ul>
           <li v-if="step >= 2">HyperText Markup Language</li>
@@ -27,12 +26,13 @@
       </div>
     </slide>
 
-    <slide class="slide slide-2" enter='bounceInRight' leave='fadeOut' :steps="2">
+    <slide class="slide slide-2" enter='bounceInRight' leave='fadeOut' :steps="3">
       <h2>How does it <span class="color-accent">look</span> ?</h2>
 
       <div class="snippet" v-if="step >= 2">
         <eg-code-block lang="HTML">{{htmlCodeExample1}}</eg-code-block>
       </div>
+      <p v-if="step >= 3">I think this paragraph looks great !</p>
     </slide>
 
     <slide class="slide slide-3" enter='bounceInRight' leave='fadeOut' :steps="5">
@@ -55,11 +55,25 @@
       <img src="./assets/elements.gif">
     </slide>
 
-    <slide class="slide slide-5" enter='bounceInRight' leave='fadeOut' :steps="2">
+    <slide class="slide slide-5" enter='bounceInRight' leave='fadeOut' :steps="3">
       <h2>Block Elements</h2>
       <h3>Headings</h3>
 
-      <eg-code-block v-if="step >= 2" lang="HTML">{{htmlCodeExample4}}</eg-code-block>
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-3">
+          <eg-code-block v-if="step >= 2" lang="HTML">{{htmlCodeExample4}}</eg-code-block>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1 pure-u-lg-2-3" v-if="step >= 3">
+          <h1>Fifth Element</h1>
+          <h2>Multipass!</h2>
+          <h3>Aziz, light!</h3>
+          <h4>Me fifth element - supreme being. Me protect you.</h4>
+          <h5>Boooooooom ba da booom</h5>
+          <h6>You wanna play it soft. We'll play it soft. You wanna play it hard. Let's play it hard.</h6>
+        </div>
+      </div>
+
     </slide>
 
     <slide class="slide slide-6" enter='bounceInRight' leave='fadeOut' :steps="2">
@@ -67,10 +81,10 @@
       <h3>Lists</h3>
 
       <div class="pure-g">
-        <div class="pure-u-2-5">
+        <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
           <eg-code-block v-if="step >= 2" lang="HTML">{{htmlCodeExample5}}</eg-code-block>
         </div>
-        <div class="pure-u-3-5" v-if="step >=2">
+        <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2 result-block" v-if="step >=2">
           <ul>
             <li>Leeloo</li>
             <li>Korben Dallas</li>
@@ -155,35 +169,39 @@
     <slide class="slide slide-13" enter='bounceInRight' leave='fadeOut'>
       <h2>Tables</h2>
 
-      <eg-code-block class="table-code" lang="HTML">{{htmlCodeExample12}}</eg-code-block>
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
+          <eg-code-block class="table-code" lang="HTML">{{htmlCodeExample12}}</eg-code-block>
+        </div>
 
-      <div class="table-result">
-        <table>
-          <caption>Cast</caption>
+        <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
+          <table>
+            <caption>Cast</caption>
 
-          <thead><tr>
-            <th>Actors</th>
-            <th>Characters</th>
-          </tr></thead>
+            <thead><tr>
+              <th>Actors</th>
+              <th>Characters</th>
+            </tr></thead>
 
-          <tbody><tr>
-            <td>Milla Jovovich</td>
-            <td>Leeloo</td>
-          </tr>
-          <tr>
-            <td>Chris Tucker</td>
-            <td>Ruby Rhod</td>
-          </tr>
-          <tr>
-            <td>Bruce Willis</td>
-            <td>Korben Dallas</td>
-          </tr></tbody>
+            <tbody><tr>
+              <td>Milla Jovovich</td>
+              <td>Leeloo</td>
+            </tr>
+            <tr>
+              <td>Chris Tucker</td>
+              <td>Ruby Rhod</td>
+            </tr>
+            <tr>
+              <td>Bruce Willis</td>
+              <td>Korben Dallas</td>
+            </tr></tbody>
 
-          <tfoot><tr>
-            <th>Actors</th>
-            <th>Characters</th>
-          </tr></tfoot>
-        </table>
+            <tfoot><tr>
+              <th>Actors</th>
+              <th>Characters</th>
+            </tr></tfoot>
+          </table>
+        </div>
       </div>
     </slide>
 
@@ -244,11 +262,20 @@ export default {
       htmlCodeExample2: '<a href="http://www.donothingfor2minutes.com">Do nothing for 2 Minutes</a>',
       htmlCodeExample3: '<img src="./assets/parrot.gif" alt="a happy parrot animation" class="parrot-image">',
       htmlCodeExample4: `<h1>Fifth Element</h1>
+
 <h2>Multipass!</h2>
+
 <h3>Aziz, light!</h3>
-<h4>Me fifth element - supreme being. Me protect you.</h4>
+
+<h4>Me fifth element - supreme being.
+Me protect you.</h4>
+
 <h5>Boooooooom ba da booom</h5>
-<h6>You wanna play it soft. We'll play it soft. You wanna play it hard. Let's play it hard.</h6>`,
+
+<h6>You wanna play it soft.
+We'll play it soft.
+You wanna play it hard.
+Let's play it hard.</h6>`,
       htmlCodeExample5: `<ul>
   <li>Leeloo</li>
   <li>Korben Dallas</li>
@@ -397,6 +424,37 @@ export default {
     }
   }
 
+  .slide-5 {
+    .pure-g {
+      h1, h2, h3, h4, h5, h6 {
+        text-align: left;
+        padding-left: 25px;
+        color: black;
+        font-family: monospace;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.7em;
+      }
+      h3 {
+        font-size: 1.5em;
+      }
+      h4 {
+        font-size: 1.2em;
+      }
+      h5 {
+        font-size: 1em;
+      }
+      h6 {
+        font-size: 0.7em;
+      }
+
+    }
+  }
+
   .slide-5, .slide-6, .slide-7, .slide-8, .slide-9, .slide-10 {
     h2 {
       margin-bottom: 0.2em;
@@ -409,11 +467,13 @@ export default {
 
   .slide-6 {
 
-    .pure-g {
+    .result-block {
+      padding-left: 25px;
+      box-sizing: border-box;
+    }
 
-      .pure-u-3-5 {
-        text-align: left;
-      }
+    ul, ol, dl {
+      text-align: left;
     }
   }
 
@@ -447,19 +507,8 @@ export default {
 
   .slide-13 {
 
-    .table-code {
-      position: absolute;
-      left: 5%;
-      bottom: 5%;
-      width: 850px;
-    }
-
-    .table-result {
-      position: absolute;
-      right: 5%;
-      top: 30%;
-      width: 800px;
-      text-align: left;
+    h2 {
+      margin-bottom: 0;
     }
   }
 </style>

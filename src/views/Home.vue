@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <div class="home-background"></div>
     <h1>Cours de Javascript : ISEN CIR 2 - 2018</h1>
 
     <div class="courses">
@@ -20,7 +21,7 @@
             </li>
           </ul>
 
-          <router-link to="/tp1-tv-show" class="tp-link">TP</router-link>
+          <router-link to="/tp1-tv-show" class="tp-link">Lab 1: TV Shows</router-link>
         </div>
 
         <!--CLASS 2-->
@@ -91,6 +92,16 @@ export default {
 <style lang="scss">
   @import '../styles/colors';
 
+  .home-background {
+    background: url('../assets/gridme.png') repeat;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+  }
+
   .home {
     width: 75%;
     margin: auto;
@@ -110,6 +121,17 @@ export default {
         width: 50%;
       }
       .course-container {
+        text-align: left;
+
+        a, a:link {
+          color: #FF6600;
+          text-decoration: none;
+          font-size: 1.2em;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
 
         .course-title {
           font-size: 1.5em;
@@ -122,16 +144,11 @@ export default {
           text-align: left;
 
           li {
-            font-size: 2em;
             list-style-type: none;
 
             a {
+              font-size: 2em;
               color: $text-primary !important;
-              text-decoration: none;
-
-              &:hover {
-                text-decoration: underline;
-              }
             }
           }
         }

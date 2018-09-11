@@ -4,6 +4,8 @@
     </article>
     <h1>TV Shows</h1>
 
+    <img src="https://cdn.mos.cms.futurecdn.net/Rg8zUgWJbg7BKqTZDkjb8A-320-80.jpg" class="tp-img">
+
     <nav>
       <p>Table of content</p>
       <ul>
@@ -247,6 +249,12 @@ export default {
     right: 0;
     left: 0;
     z-index: -1;
+  }
+
+  .tp-img {
+    position: relative;
+    top: -40px;
+    float: right;
   }
 
   h1 {
