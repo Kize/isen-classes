@@ -47,7 +47,7 @@
 
     <h3>Context</h3>
     <p>We need a web page that presents a famous TV show. This page will contain a synopsis, a list of the seasons,
-      the cast, ans some quotes.
+      the cast, and some quotes.
     </p>
 
     <h3>Steps</h3>
