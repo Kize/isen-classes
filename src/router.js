@@ -61,5 +61,16 @@ export default new Router({
       name: 'TP1 - TV show',
       component: () => import('./views/class1/tp-tv-show.vue'),
     },
+
+    // CLASS 2
+    {
+      path: '/the-hitchhikers-guide-to-the-javascript',
+      redirect: '/the-hitchhikers-guide-to-the-javascript/1/1',
+    },
+    {
+      path: '/the-hitchhikers-guide-to-the-javascript/:slide/:step',
+      name: 'the-hitchhikers-guide-to-the-javascript',
+      component: () => import('./views/class2/hitchhikers-guide.vue'),
+    },
   ],
 });

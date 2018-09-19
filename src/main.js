@@ -1,20 +1,17 @@
 import Vue from 'vue';
 
-import Eagle, { Options } from 'eagle.js';
+import Eagle from 'eagle.js';
 
 import 'eagle.js/dist/eagle.css';
 import 'animate.css';
+import 'highlight.js/lib/index';
+import 'highlight.js/styles/default.css';
 
-// highlight.js style
-import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css';
-
+import VueHighlightJS from 'vue-highlightjs';
 import App from './App.vue';
 import router from './router';
 
 Vue.config.productionTip = false;
-
-Options.hljs = hljs;
 
 new Vue({
   router,
@@ -22,3 +19,4 @@ new Vue({
 }).$mount('#app');
 
 Vue.use(Eagle);
+Vue.use(VueHighlightJS);

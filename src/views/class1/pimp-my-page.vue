@@ -9,7 +9,7 @@
     <slide class="slide" enter='bounceInRight' leave='fadeOut'>
       <h2>Selectors</h2>
 
-      <eg-code-block lang="css">h1 { /* all h1 elements */ }
+      <pre v-highlightjs><code class="CSS">h1 { /* all h1 elements */ }
 
 .title { /* all elements with class="title" */ }
 
@@ -23,7 +23,8 @@ img.avatar { /* all images elements with class="avatar" */ }
 
 button:hover { /* button elements being hovered by mouse pointers */ }
 
-:not(.invalid) { /* elements that don't have class="invalid" */ }</eg-code-block>
+:not(.invalid) { /* elements that don't have class="invalid" */ }</code></pre>
+
     </slide>
 
     <slide class="slide slide-2" enter='bounceInRight' leave='fadeOut'>
@@ -32,8 +33,9 @@ button:hover { /* button elements being hovered by mouse pointers */ }
       <div class="pure-g">
         <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
           <div class="column-container">
-            <eg-code-block lang="html">{{htmlCodeExample1}}</eg-code-block>
-<eg-code-block lang="css">/* CSS code example */
+            <pre v-highlightjs="htmlCodeExample1"><code class="HTML"></code></pre>
+
+            <pre v-highlightjs><code class="CSS">/* CSS code example */
 p {
   background: #EEEEEE;
   color: #111;
@@ -42,9 +44,10 @@ p {
 }
 p.important {
   border: 5px solid red;
-}</eg-code-block>
+}</code></pre>
           </div>
         </div>
+
         <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
           <div class="column-container">
             <p>Just a paragraph.</p>
@@ -107,7 +110,7 @@ p.important {
       <div class="pure-g">
         <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
           <div class="column-container">
-            <eg-code-block lang="css">img.rollin-racoon {
+            <pre v-highlightjs><code class="CSS">img.rollin-racoon {
   display:none;
 }
 
@@ -121,7 +124,7 @@ p.important {
   img.rollin-racoon {
     width: 750px;
   }
-}</eg-code-block>
+}</code></pre>
           </div>
         </div>
         <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">

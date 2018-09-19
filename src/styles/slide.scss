@@ -16,6 +16,15 @@
     }
   }
 
+  pre {
+    margin: 0.3em 0;
+  }
+
+  code {
+    font-size: 0.6em;
+    text-align: left;
+  }
+
   .pure-g {
 
     .column-container {
@@ -29,5 +38,23 @@
 
   .no-dot-list {
     list-style: none;
+  }
+
+  .alt-color-list {
+    li:nth-child(odd) {
+      color: #16a7dc;
+    }
+  }
+
+  .hide {
+    opacity: 0;
+  }
+
+  .internal-slide-animation {
+    & > div {
+      position: absolute;
+      width: 85vw;
+      box-sizing: border-box;
+    }
   }
 }

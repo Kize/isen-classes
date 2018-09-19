@@ -29,7 +29,9 @@
           <h2 class="course-title">Cours 2 : JS 101 + DOM + Events</h2>
           <ul class="course-list">
             <li>
-              <router-link to="/">In progress...</router-link>
+              <router-link to="/the-hitchhikers-guide-to-the-javascript/1/1">
+                The Hitchhiker's Guide To The Javascript
+              </router-link>
             </li>
           </ul>
         </div>

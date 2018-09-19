@@ -1,5 +1,5 @@
 <template>
-  <div class="eg-slideshow">
+  <div class="eg-slideshow markup">
     <slide class="slide slide-0" leave='fadeOut'>
       <h1>Tag, you're it !</h1>
 
@@ -30,7 +30,7 @@
       <h2>How does it <span class="color-accent">look</span> ?</h2>
 
       <div class="snippet" v-if="step >= 2">
-        <eg-code-block lang="HTML">{{htmlCodeExample1}}</eg-code-block>
+        <pre v-highlightjs="htmlCodeExample1"><code class="HTML"></code></pre>
       </div>
       <p v-if="step >= 3">I think this paragraph looks great !</p>
     </slide>
@@ -39,12 +39,12 @@
       <h2>Let's add some attributes</h2>
 
       <div class="snippet" v-if="step >= 2">
-        <eg-code-block lang="HTML">{{htmlCodeExample2}}</eg-code-block>
+        <pre v-highlightjs="htmlCodeExample2"><code class="HTML"></code></pre>
         <a href="http://www.donothingfor2minutes.com" v-if="step >= 3">Do nothing for 2 Minutes</a>
       </div>
 
       <div class="snippet" v-if="step >= 4">
-        <eg-code-block lang="HTML">{{htmlCodeExample3}}</eg-code-block>
+        <pre v-highlightjs="htmlCodeExample3"><code class="HTML"></code></pre>
         <img src="./assets/parrot.gif" alt="a happy parrot animation" class="parrot-image" v-if="step >= 5">
       </div>
     </slide>
@@ -61,7 +61,7 @@
 
       <div class="pure-g">
         <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-3">
-          <eg-code-block v-if="step >= 2" lang="HTML">{{htmlCodeExample4}}</eg-code-block>
+          <pre v-highlightjs="htmlCodeExample4" v-if="step >= 2"><code class="HTML"></code></pre>
         </div>
 
         <div class="pure-u-1 pure-u-md-1 pure-u-lg-2-3" v-if="step >= 3">
@@ -82,7 +82,7 @@
 
       <div class="pure-g">
         <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
-          <eg-code-block v-if="step >= 2" lang="HTML">{{htmlCodeExample5}}</eg-code-block>
+          <pre v-highlightjs="htmlCodeExample5" v-if="step >= 2"><code class="HTML"></code></pre>
         </div>
         <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2 result-block" v-if="step >=2">
           <ul>
@@ -107,63 +107,70 @@
       <h2>Block Elements</h2>
       <h3>Other</h3>
 
-      <eg-code-block lang="HTML">{{htmlCodeExample6}}</eg-code-block>
+      <pre v-highlightjs="htmlCodeExample6"><code class="HTML"></code></pre>
     </slide>
 
     <slide class="slide slide-8" enter='bounceInRight' leave='fadeOut'>
       <h2>Inline Elements</h2>
       <h3>Phrases</h3>
 
-      <eg-code-block lang="HTML">{{htmlCodeExample7}}</eg-code-block>
+      <pre v-highlightjs="htmlCodeExample7"><code class="HTML"></code></pre>
     </slide>
 
     <slide class="slide slide-9" enter='bounceInRight' leave='fadeOut'>
       <h2>Inline Elements</h2>
       <h3>Computer phrase</h3>
 
-      <eg-code-block lang="HTML">{{htmlCodeExample8}}</eg-code-block>
+      <pre v-highlightjs="htmlCodeExample8"><code class="HTML"></code></pre>
     </slide>
 
     <slide class="slide slide-10" enter='bounceInRight' leave='fadeOut'>
       <h2>Inline Elements</h2>
       <h3>Presentation phrase</h3>
 
-      <eg-code-block lang="HTML">{{htmlCodeExample9}}</eg-code-block>
+      <pre v-highlightjs="htmlCodeExample9"><code class="HTML"></code></pre>
     </slide>
 
     <slide class="slide slide-11" enter='bounceInRight' leave='fadeOut'>
       <h2>Forms Elements</h2>
 
-      <eg-code-block lang="HTML">{{htmlCodeExample10}}</eg-code-block>
+      <pre v-highlightjs="htmlCodeExample10"><code class="HTML"></code></pre>
     </slide>
 
     <slide class="slide slide-12" enter='bounceInRight' leave='fadeOut'>
       <h2>Forms Elements</h2>
 
-      <eg-code-block class="form-code" lang="HTML">{{htmlCodeExample11}}</eg-code-block>
-      <form class="form-result" action="/post-form" method="post">
-        <label for="name-input">Name:</label>
-        <input id="name-input" name="nameInput" type="text" value="Leeloo"/>
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
+          <pre v-highlightjs="htmlCodeExample11"><code class="HTML"></code></pre>
+        </div>
 
-        <br>
+        <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
+          <form class="form-result" action="/post-form" method="post">
+            <label for="name-input">Name:</label>
+            <input id="name-input" name="nameInput" type="text" value="Leeloo"/>
 
-        <label for="identity-input">Credentials:</label>
-        <select id="identity-input" name="identitySelect">
-          <option value="multipass" selected>Multipass</option>
-          <option value="passport">passport</option>
-        </select>
+            <br>
 
-        <fieldset>
-          <legend>Race</legend>
+            <label for="identity-input">Credentials:</label>
+            <select id="identity-input" name="identitySelect">
+              <option value="multipass" selected>Multipass</option>
+              <option value="passport">passport</option>
+            </select>
 
-          <input type="radio" id="human-radio" name="race" value="human"/>
-          <label for="human-radio">Human</label>
-          <input type="radio" id="perfect-being-radio" name="race" value="perfect-being"/>
-          <label for="perfect-being-radio">Perfect Being</label>
-        </fieldset>
+            <fieldset>
+              <legend>Race</legend>
 
-        <button type="submit">Validate</button>
-      </form>
+              <input type="radio" id="human-radio" name="race" value="human"/>
+              <label for="human-radio">Human</label>
+              <input type="radio" id="perfect-being-radio" name="race" value="perfect-being"/>
+              <label for="perfect-being-radio">Perfect Being</label>
+            </fieldset>
+
+            <button type="submit">Validate</button>
+          </form>
+        </div>
+      </div>
     </slide>
 
     <slide class="slide slide-13" enter='bounceInRight' leave='fadeOut'>
@@ -171,7 +178,7 @@
 
       <div class="pure-g">
         <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
-          <eg-code-block class="table-code" lang="HTML">{{htmlCodeExample12}}</eg-code-block>
+          <pre v-highlightjs="htmlCodeExample12"><code class="HTML"></code></pre>
         </div>
 
         <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
@@ -292,8 +299,8 @@ Let's play it hard.</h6>`,
 <address>...</address>
 <blockquote>...</blockquote>
 <del>...</del>
-<hr>
 <ins>...</ins>
+<hr>
 <noscript>...</noscript>
 <pre>...</pre>`,
       htmlCodeExample7: `<abbr>...</abbr>
@@ -347,14 +354,12 @@ Let's play it hard.</h6>`,
 </form>`,
       htmlCodeExample12: `<table>
   <caption>Cast</caption>
-
   <thead>
     <tr>
       <th>Actors</th>
       <th>Characters</th>
     </tr>
   </thead>
-
   <tbody>
     <tr>
       <td>Milla Jovovich</td>
@@ -369,7 +374,6 @@ Let's play it hard.</h6>`,
       <td>Korben Dallas</td>
     </tr>
   </tbody>
-
   <tfoot>
     <tr>
       <th>Actors</th>
@@ -392,6 +396,16 @@ Let's play it hard.</h6>`,
   },
 };
 </script>
+
+<style lang="scss">
+  .markup {
+    .slide-12 {
+      .eg-slide-content {
+        width: 95vw;
+      }
+    }
+  }
+</style>
 
 <style scoped lang="scss">
   @import '../../styles/colors';
@@ -455,7 +469,7 @@ Let's play it hard.</h6>`,
     }
   }
 
-  .slide-5, .slide-6, .slide-7, .slide-8, .slide-9, .slide-10 {
+  .slide-5, .slide-6, .slide-7, .slide-8, .slide-9, .slide-10, .slide-12, .slide-13 {
     h2 {
       margin-bottom: 0.2em;
     }
@@ -479,29 +493,14 @@ Let's play it hard.</h6>`,
 
   .slide-12 {
 
-    .form-code {
-      position: absolute;
-      left: 5%;
-      top: 30%;
-      width: 850px;
+    .form-result {
+      text-align: left;
+      margin-left: 2em;
     }
 
-    .form-result {
-      position: absolute;
-      right: 5%;
-      top: 30%;
-      width: 800px;
-      text-align: left;
-
-      * {
-        margin-bottom: 0.5em;
-        margin-right: 0.5em;
-      }
-
-      select, button {
-        font-size: 1em;
-        padding: 12px;
-      }
+    select, button {
+      font-size: 1em;
+      padding: 12px;
     }
   }
 
