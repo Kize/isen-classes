@@ -722,8 +722,7 @@ var b = j;        // b => 4
 
         <eg-transition enter="fadeInRight" leave="fadeOutLeft">
           <div class="slide-content" v-if="step >= 3">
-          <pre v-highlightjs><code class="javascript">
-/* var versus let */
+            <pre v-highlightjs><code class="javascript">/* var versus let */
 var a = 42;
 let foe = 'Humma Kavula !!!';
 
@@ -736,10 +735,9 @@ for(let foe = 0; foe < 10; foe++) {
   setTimeout(() => {console.log(foe);}, 0);
 }
 console.log(foe);
-          </code></pre>
+            </code></pre>
 
-            <pre v-highlightjs v-if="step >= 4"><code class="javascript">
-Output results:
+            <pre v-highlightjs v-if="step >= 4"><code class="javascript">Output results:
   10
   Humma Kavula !!!
 => 10 times the output 10
@@ -748,7 +746,49 @@ Output results:
           </div>
         </eg-transition>
       </div>
+    </slide>
 
+    <slide class="slide" enter='bounceInRight'>
+      <h1>Integration</h1>
+
+      <div class="slide-content">
+        <pre v-highlightjs><code class="javascript">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;script src="myscript1.js">&lt;/script>      &lt;!-- unobstrusive JS -->
+    &lt;script> // some code &lt;/script>           &lt;!-- REALLY BAD PRACTICE -->
+  &lt;/head>
+  &lt;body>
+    &lt;script src="myscript2.js">&lt;/script>      &lt;!-- better unobstrusive JS -->
+  &lt;/body>
+&lt;/html>
+        </code></pre>
+      </div>
+    </slide>
+
+    <slide class="slide" enter='bounceInRight'>
+      <h1>Compatibility</h1>
+
+      <div class="slide-content list-container">
+        <ul class="no-dot-list">
+          <li>Read the documentation</li>
+          <li>Can I use ?</li>
+          <li>Test on your target browsers</li>
+        </ul>
+      </div>
+    </slide>
+
+    <slide class="slide" enter='bounceInRight'>
+      <h1>Additional Links</h1>
+
+      <div class="slide-content list-container">
+        <ul class="no-dot-list">
+          <li><a href="https://developer.mozilla.org/en/JavaScript/Reference">JavaScript Reference (MDN)</a></li>
+          <li><a href="https://github.com/tc39">TC39 Github Organization</a></li>
+          <li><a href="https://github.com/getify/You-Dont-Know-JS">You don't know JavaScript (e-books)</a></li>
+        </ul>
+      </div>
     </slide>
 
   </div>

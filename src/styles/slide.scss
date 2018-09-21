@@ -52,9 +52,9 @@
 
   .internal-slide-animation {
     & > div {
+      box-sizing: border-box;
       position: absolute;
       width: 85vw;
-      box-sizing: border-box;
     }
   }
 }
