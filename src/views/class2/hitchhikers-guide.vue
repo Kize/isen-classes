@@ -20,21 +20,25 @@
             </a></li>
           <li v-bind:class="{'hide': step < 4}">
             <a href="http://en.wikipedia.org/wiki/Multi-paradigm#Multi-paradigm_programming_language">
-              Multi-paradigm</a>
-          </li>
-          <li v-bind:class="{'hide': step < 5}">
-            <a href="http://en.wikipedia.org/wiki/Imperative_programming">
-              Imperative
+              Multi-paradigm
             </a>
-          </li>
-          <li v-bind:class="{'hide': step < 6}">
-            <a href="http://en.wikipedia.org/wiki/Functional_programming">
-              Functional</a>
-          </li>
-          <li v-bind:class="{'hide': step < 7}">
-            <a href="http://en.wikipedia.org/wiki/Object-oriented_programming">
-              Object-oriented
-            </a>
+
+            <ul class="no-dot-list">
+              <li v-bind:class="{'hide': step < 5}">
+                <a href="http://en.wikipedia.org/wiki/Imperative_programming">
+                  Imperative
+                </a>
+              </li>
+              <li v-bind:class="{'hide': step < 6}">
+                <a href="http://en.wikipedia.org/wiki/Functional_programming">
+                  Functional</a>
+              </li>
+              <li v-bind:class="{'hide': step < 7}">
+                <a href="http://en.wikipedia.org/wiki/Object-oriented_programming">
+                  Object-oriented
+                </a>
+              </li>
+            </ul>
           </li>
           <li v-bind:class="{'hide': step < 8}">
             <a href="http://en.wikipedia.org/wiki/First-class_function">
@@ -166,7 +170,7 @@ var isTimeAnIllusion = true;        // "Time is an illusion ...
 var isLunchtimeAnIllusion = false;  // ... lunchtime, doubly so." - Ford Prefect
         </code></pre>
 
-        <pre v-highlightjs><code class="javascript">var isBoolean = new String(false);</code></pre>
+        <pre v-highlightjs><code class="javascript">var isBoolean = new Boolean(false);</code></pre>
       </div>
     </slide>
 
@@ -234,6 +238,61 @@ var [arthur, ...allOthers] = allChars;
     </slide>
 
     <slide class="slide" enter='bounceInRight'>
+      <h2>Object</h2>
+
+      <div class="slide-content">
+        <pre v-highlightjs><code class="javascript">
+var emptyObject = {};
+var anotherOne = new Object();
+
+var heartOfGold = {
+  type: 'starship',
+  generator: 'Infinite Improbability Drive',
+  crew: [
+    'Zaphod Beeblebox',
+    'Marvin'
+  ],
+  move: function() {
+    console.warn('You\'re gonna be somewhere, you just don\'t know where, or in what shape.');
+  }
+};
+
+heartOfGold.move();
+
+heartOfGold.origin = 'Damogran';
+
+heartOfGold.type = 'white ' + heartOfGold.type;
+        </code></pre>
+      </div>
+    </slide>
+
+    <slide class="slide" enter='bounceInRight'>
+      <h2>Object manipulation</h2>
+
+      <div class="slide-content">
+        <pre v-highlightjs><code class="javascript">
+var heartOfGold = {
+  type: 'starship',
+  generator: 'Infinite Improbability Drive',
+  crew: [
+    'Zaphod Beeblebox',
+    'Marvin'
+  ],
+  move: function() {
+    console.warn('You\'re gonna be somewhere, you just don\'t know where, or in what shape.');
+  }
+};
+
+var keys = Object.keys(heartOfGold); // keys => ['type', 'generator', 'crew', 'move']
+        </code></pre>
+
+        <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object">
+          MDN Object References
+        </a>
+      </div>
+    </slide>
+
+    <slide class="slide" enter='bounceInRight'>
       <h1>Operators</h1>
 
       <img class="main-gif" src="./assets/marvin-computer.gif"/>
@@ -294,6 +353,7 @@ var e = 2 <= 2;         // e => true
 
 
 var f = 'abc' < 'def'   // f => true
+var z = '10' > '2'      // z => false
         </code></pre>
       </div>
     </slide>
