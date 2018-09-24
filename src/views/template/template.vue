@@ -1,6 +1,6 @@
 <template>
   <div class="eg-slideshow">
-    <slide class="slide" :mouseNavigation="false" leave='fadeOut'>
+    <slide class="slide" leave='fadeOut'>
       <h1>Hello world</h1>
     </slide>
 

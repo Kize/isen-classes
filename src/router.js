@@ -72,5 +72,14 @@ export default new Router({
       name: 'the-hitchhikers-guide-to-the-javascript',
       component: () => import('./views/class2/hitchhikers-guide.vue'),
     },
+    {
+      path: '/dom-events',
+      redirect: '/dom-events/1/1',
+    },
+    {
+      path: '/dom-events/:slide/:step',
+      name: 'dom-events',
+      component: () => import('./views/class2/dom-events.vue'),
+    },
   ],
 });

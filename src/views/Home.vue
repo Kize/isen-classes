@@ -33,7 +33,14 @@
                 The Hitchhiker's Guide To The Javascript
               </router-link>
             </li>
+            <li>
+              <router-link to="/dom-events/1/1">
+                DOM & HTML Events
+              </router-link>
+            </li>
           </ul>
+
+          <router-link to="/tp2" class="tp-link">Lab 2:</router-link>
         </div>
 
         <!--CLASS 3-->
@@ -127,19 +134,14 @@ export default {
 
         a, a:link {
           color: #FF6600;
-          text-decoration: none;
           font-size: 1.2em;
 
-          &:hover {
-            text-decoration: underline;
-          }
         }
 
         .course-title {
           font-size: 1.5em;
           text-align: left;
           color: $meadow;
-          text-decoration: underline;
         }
 
         .course-list {
