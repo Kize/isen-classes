@@ -58,7 +58,7 @@ export default new Router({
     },
     {
       path: '/tp1-tv-show',
-      name: 'TP1 - TV show',
+      name: 'tp1-tv-show',
       component: () => import('./views/class1/tp-tv-show.vue'),
     },
 
@@ -80,6 +80,11 @@ export default new Router({
       path: '/dom-events/:slide/:step',
       name: 'dom-events',
       component: () => import('./views/class2/dom-events.vue'),
+    },
+    {
+      path: '/tp2-beta-series',
+      name: 'tp2-beta-series',
+      component: () => import('./views/class2/tp-beta-series.vue'),
     },
   ],
 });

@@ -40,7 +40,7 @@
             </li>
           </ul>
 
-          <router-link to="/tp2" class="tp-link">Lab 2:</router-link>
+          <router-link to="/tp2-beta-series" class="tp-link">Lab 2: Beta Series Calendar</router-link>
         </div>
 
         <!--CLASS 3-->
