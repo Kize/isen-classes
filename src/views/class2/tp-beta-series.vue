@@ -336,8 +336,8 @@ header, h1 {
   &lt;div class="cal-month" data-month="10" data-year="2018">
     &lt;h2 class="cal-month-name">November 2018&lt;/h2>
   &lt;/div>
-  &lt;div class="cal-month" data-month="11" data-year="2019">
-    &lt;h2 class="cal-month-name">December 2019&lt;/h2>
+  &lt;div class="cal-month" data-month="11" data-year="2018">
+    &lt;h2 class="cal-month-name">December 2018&lt;/h2>
   &lt;/div>
   &lt;div class="cal-month" data-month="0" data-year="2019">
     &lt;h2 class="cal-month-name">January 2019&lt;/h2>
@@ -468,6 +468,7 @@ header, h1 {
 
     <h3>Rules</h3>
     <ul>
+      <li>The app <strong>MUST</strong> be compatible with Chrome, Firefox, Safari, I</li>
       <li>You <strong>CANNOT</strong> use <code>innerHTML</code> for the no-jQuery parts.</li>
       <li>You <strong>MUST</strong> split your code into functions. Be organized and smart.</li>
       <li>You <strong>CANNOT</strong> add unspecified external dependencies (Javascript or CSS).</li>
@@ -498,7 +499,418 @@ header, h1 {
       We haven't covered that in the lessons, we'll see more about that next week.
     </p>
 
-    <p>The beta-series-episodes.js script provides a JSON strings that contains some episodes of some TV shows.</p>
+    <p>The
+      <button class="file-loader" v-on:click="toggleEp">beta-series-episodes.js</button>
+      script provides a JSON strings that contains some episodes of some TV shows.
+    </p>
+
+    <eg-transition enter="fadeIn" leave="fadeOut">
+      <pre v-highlightjs v-if="showEp"><code class="javascript">var tvShows = {
+  series: [
+    {
+      name: 'Better Call Saul',
+      ref: 'better-call-saul',
+      seasons: [
+        {
+          number: 4,
+          episodes: [
+            {
+              number: 5,
+              date: '09/04/2018'
+            },
+            {
+              number: 6,
+              date: '09/11/2018'
+            },
+            {
+              number: 7,
+              date: '09/18/2018'
+            },
+            {
+              number: 8,
+              date: '09/25/2018'
+            },
+            {
+              number: 9,
+              date: '10/02/2018'
+            },
+            {
+              number: 10,
+              date: '10/09/2018'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Marvel\'s Iron Fist',
+      ref: 'marvels-iron-fist',
+      seasons: [
+        {
+          number: 2,
+          episodes: [
+            {
+              number: 1,
+              date: '09/07/2018'
+            },
+            {
+              number: 2,
+              date: '09/07/2018'
+            },
+            {
+              number: 3,
+              date: '09/07/2018'
+            },
+            {
+              number: 4,
+              date: '09/07/2018'
+            },
+            {
+              number: 5,
+              date: '09/07/2018'
+            },
+            {
+              number: 6,
+              date: '09/07/2018'
+            },
+            {
+              number: 7,
+              date: '09/07/2018'
+            },
+            {
+              number: 8,
+              date: '09/07/2018'
+            },
+            {
+              number: 9,
+              date: '09/07/2018'
+            },
+            {
+              number: 10,
+              date: '09/07/2018'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'BoJack Horseman',
+      ref: 'bojack-horseman',
+      seasons: [
+        {
+          number: 5,
+          episodes: [
+            {
+              number: 1,
+              date: '09/14/2018'
+            },
+            {
+              number: 2,
+              date: '09/14/2018'
+            },
+            {
+              number: 3,
+              date: '09/14/2018'
+            },
+            {
+              number: 4,
+              date: '09/14/2018'
+            },
+            {
+              number: 5,
+              date: '09/14/2018'
+            },
+            {
+              number: 6,
+              date: '09/14/2018'
+            },
+            {
+              number: 7,
+              date: '09/14/2018'
+            },
+            {
+              number: 8,
+              date: '09/14/2018'
+            },
+            {
+              number: 9,
+              date: '09/14/2018'
+            },
+            {
+              number: 10,
+              date: '09/14/2018'
+            },
+            {
+              number: 11,
+              date: '09/14/2018'
+            },
+            {
+              number: 12,
+              date: '09/14/2018'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Big Bang Theory',
+      ref: 'big-bang-theory',
+      seasons: [
+        {
+          number: 12,
+          episodes: [
+            {
+              number: 1,
+              date: '09/25/2018'
+            },
+            {
+              number: 2,
+              date: '09/28/2018'
+            },
+            {
+              number: 3,
+              date: '10/05/2018'
+            },
+            {
+              number: 4,
+              date: '10/12/2018'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Young Sheldon',
+      ref: 'young-sheldon',
+      seasons: [
+        {
+          number: 2,
+          episodes: [
+            {
+              number: 1,
+              date: '09/25/2018'
+            },
+            {
+              number: 2,
+              date: '09/28/2018'
+            },
+            {
+              number: 3,
+              date: '10/05/2018'
+            },
+            {
+              number: 4,
+              date: '10/12/2018'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'House Of Cards (US)',
+      ref: 'house-of-cards',
+      seasons: [
+        {
+          number: 6,
+          episodes: [
+            {
+              number: 1,
+              date: '11/02/2018'
+            },
+            {
+              number: 2,
+              date: '11/02/2018'
+            },
+            {
+              number: 3,
+              date: '11/02/2018'
+            },
+            {
+              number: 4,
+              date: '11/02/2018'
+            },
+            {
+              number: 5,
+              date: '11/02/2018'
+            },
+            {
+              number: 6,
+              date: '11/02/2018'
+            },
+            {
+              number: 7,
+              date: '11/02/2018'
+            },
+            {
+              number: 8,
+              date: '11/02/2018'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Marvel\'s Daredevil',
+      ref: 'marvels-daredevil',
+      seasons: [
+        {
+          number: 3,
+          episodes: [
+            {
+              number: 1,
+              date: '10/19/2018'
+            },
+            {
+              number: 2,
+              date: '10/19/2018'
+            },
+            {
+              number: 3,
+              date: '10/19/2018'
+            },
+            {
+              number: 4,
+              date: '10/19/2018'
+            },
+            {
+              number: 5,
+              date: '10/19/2018'
+            },
+            {
+              number: 6,
+              date: '10/19/2018'
+            },
+            {
+              number: 7,
+              date: '10/19/2018'
+            },
+            {
+              number: 8,
+              date: '10/19/2018'
+            },
+            {
+              number: 9,
+              date: '10/19/2018'
+            },
+            {
+              number: 10,
+              date: '10/19/2018'
+            },
+            {
+              number: 11,
+              date: '10/19/2018'
+            },
+            {
+              number: 12,
+              date: '10/19/2018'
+            },
+            {
+              number: 13,
+              date: '10/19/2018'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Peaky Blinders',
+      ref: 'peaky-blinders',
+      seasons: [
+        {
+          number: 4,
+          episodes: [
+            {
+              number: 1,
+              date: '11/16/2018'
+            },
+            {
+              number: 2,
+              date: '11/23/2018'
+            },
+            {
+              number: 3,
+              date: '11/30/2018'
+            },
+            {
+              number: 4,
+              date: '12/07/2018'
+            },
+            {
+              number: 5,
+              date: '12/14/2018'
+            },
+            {
+              number: 6,
+              date: '12/21/2018'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Burger Quizz',
+      ref: 'burger-quizz',
+      seasons: [
+        {
+          number: 2,
+          episodes: [
+            {
+              number: 22,
+              date: '09/05/2018'
+            },
+            {
+              number: 23,
+              date: '09/05/2018'
+            },
+            {
+              number: 24,
+              date: '09/12/2018'
+            },
+            {
+              number: 25,
+              date: '09/12/2018'
+            },
+            {
+              number: 26,
+              date: '09/19/2018'
+            },
+            {
+              number: 27,
+              date: '09/19/2018'
+            },
+            {
+              number: 28,
+              date: '09/26/2018'
+            },
+            {
+              number: 29,
+              date: '09/26/2018'
+            },
+            {
+              number: 30,
+              date: '10/03/2018'
+            },
+            {
+              number: 31,
+              date: '10/03/2018'
+            },
+            {
+              number: 32,
+              date: '10/10/2018'
+            },
+            {
+              number: 33,
+              date: '10/10/2018'
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+    </code></pre>
+    </eg-transition>
 
     <h3>Steps</h3>
     <h4>Episode List (JQuery)</h4>
@@ -514,11 +926,13 @@ header, h1 {
 
     <pre v-highlightjs><code class="HTML">
 &lt;ul class="series">
-  &lt;li class="serie-name zenith">Better Call Saul&lt;/li>
-  &lt;li class="serie-name aeronef">Burger Quizz&lt;/li>
+  &lt;li class="serie-name better-call-saul">Better Call Saul&lt;/li>
+  &lt;li class="serie-name burger-quizz">Burger Quizz&lt;/li>
   &lt;!-- and so on... -->
 &lt;/ul>
     </code></pre>
+
+    <p> <i class="accent">NOTE: </i>for the CSS class, use the <code>ref</code> property given.</p>
 
     <h4>Episodes (JQuery)</h4>
 
@@ -549,6 +963,7 @@ header, h1 {
 
     <h3>Rules</h3>
     <ul>
+      <li>The app <strong>MUST</strong> be compatible with Chrome, Firefox, Safari, Internet Explorer 11.</li>
       <li>You <strong>MUST</strong> split your code into functions. Be organized and smart.</li>
       <li>You <strong>CANNOT</strong> add unspecified external dependencies (Javascript or CSS).</li>
     </ul>
@@ -617,6 +1032,7 @@ header, h1 {
 
     <h3>Rules</h3>
     <ul>
+      <li>The app <strong>MUST</strong> be compatible with Chrome, Firefox, Safari, Internet Explorer 11.</li>
       <li>You <strong>MUST</strong> be totally awesome on this lab ;-)</li>
       <li>You <strong>CANNOT</strong> modify <code>beta-series.css</code> and <code>beta-series.html</code>.
         If you wanna modify the CSS, use <code>beta-series-custom.css</code>. If you wanna add some HTML, use the
@@ -636,8 +1052,6 @@ header, h1 {
 </template>
 
 <script>
-import diagonalStripedBrick from './assets/tp/diagonal-striped-brick.png';
-
 export default {
   name: 'tp-tv-show',
   data() {
@@ -645,6 +1059,7 @@ export default {
       showHTML: false,
       showCSS: false,
       showImg: false,
+      showEp: false,
     };
   },
   methods: {
@@ -661,6 +1076,9 @@ export default {
     },
     toggleImg() {
       this.showImg = !this.showImg;
+    },
+    toggleEp() {
+      this.showEp = !this.showEp;
     },
   },
 };

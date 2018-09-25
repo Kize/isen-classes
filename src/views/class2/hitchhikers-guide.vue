@@ -784,24 +784,24 @@ var b = j;        // b => 4
           <div class="slide-content" v-if="step >= 3">
             <pre v-highlightjs><code class="javascript">/* var versus let */
 var a = 42;
-let foe = 'Humma Kavula !!!';
+let b = 'Humma Kavula !!!';
 
 for(var a = 0; a < 10; a++) {
-  setTimeout(() => {console.log(a);}, 0);
+  console.log(a);
 }
 console.log(a);
 
-for(let foe = 0; foe < 10; foe++) {
-  setTimeout(() => {console.log(foe);}, 0);
+for(let b = 0; b < 10; b++) {
+  console.log(b);
 }
-console.log(foe);
+console.log(b);
             </code></pre>
 
             <pre v-highlightjs v-if="step >= 4"><code class="javascript">Output results:
-  10
-  Humma Kavula !!!
-=> 10 times the output 10
 => 0, 1, 2, 3, ..., 9
+  10
+=> 0, 1, 2, 3, ..., 9
+  Humma Kavula !!!
             </code></pre>
           </div>
         </eg-transition>
