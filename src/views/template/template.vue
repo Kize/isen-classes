@@ -1,11 +1,11 @@
 <template>
   <div class="eg-slideshow">
-    <slide class="slide" leave='fadeOut'>
+    <slide class="slide" enter='bounceInRight'>
       <h1>Hello world</h1>
     </slide>
 
-    <slide class="slide" enter='bounceInRight' leave='fadeOut'>
-      <h1>Page 2</h1>
+    <slide class="slide" enter='bounceInRight'>
+      <h2>Page 2</h2>
     </slide>
 
   </div>

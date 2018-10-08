@@ -86,5 +86,30 @@ export default new Router({
       name: 'tp2-beta-series',
       component: () => import('./views/class2/tp-beta-series.vue'),
     },
+
+    // CLASS 3
+    {
+      path: '/object-and-class/:slide/:step',
+      name: 'object-and-class',
+      component: () => import('./views/class3/object-and-class.vue'),
+    },
+    {
+      path: '/object-and-class',
+      redirect: '/object-and-class/1/1',
+    },
+    {
+      path: '/inception/:slide/:step',
+      name: 'inception',
+      component: () => import('./views/class3/inception.vue'),
+    },
+    {
+      path: '/inception',
+      redirect: '/inception/1/1',
+    },
+    {
+      path: '/tp3-draw-some-shapes',
+      name: 'tp3',
+      component: () => import('./views/class3/tp-3-draw-some-shapes.vue'),
+    },
   ],
 });

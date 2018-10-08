@@ -45,12 +45,17 @@
 
         <!--CLASS 3-->
         <div class="course-container">
-          <h2 class="course-title">Cours 3 : Object + Prototype + Functions</h2>
+          <h2 class="course-title">Cours 3 : Functions + Object + Prototype</h2>
           <ul class="course-list">
             <li>
-              <router-link to="/">In progress...</router-link>
+              <router-link to="/inception/1/1">Inception</router-link>
+            </li>
+            <li>
+              <router-link to="/object-and-class/1/1">Object and Class</router-link>
             </li>
           </ul>
+
+          <router-link to="/tp3-draw-some-shapes" class="tp-link">Lab 3: Draw some shapes</router-link>
         </div>
       </div>
 
