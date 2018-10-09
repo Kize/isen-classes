@@ -48,11 +48,11 @@ function testContext(context) {
   console.log(this === context);
 }
 
-showContext();                    // => Window
-new showContext();                // => Object constructed by the `new` operator
+showContext();                        // => Window
+new showContext();                    // => Object constructed by the `new` operator
 
-testContext(this);                // => true
-new testContext();                // => false
+testContext(this);                    // => true
+new testContext(this);                // => false
 
 var mainHero = {
   name: 'Dominick Cobb',
@@ -230,6 +230,7 @@ var target = {
 var eames = Object.create(mainHero);
 eames.name = 'Eames';
 
+console.log('dream' in eames);    // => true
 eames.dream(2);                   // => Dream: level 2 / Dreamer : Eames
       </code></pre>
       <pre v-highlightjs><code class="javascript">
@@ -312,7 +313,7 @@ console.log(firstDream instanceof Object);     // => true</code></pre>
     <slide class="slide" enter='bounceInRight'>
       <h1>Ninja Stuff</h1>
 
-      <img src="./assets/ninja.gif">
+      <img class="ninja-img" src="./assets/ninja.gif">
     </slide>
 
     <slide class="slide" enter='bounceInRight'>
@@ -464,5 +465,9 @@ export default {
 
   .main-img {
     width: 65vw;
+  }
+
+  .ninja-img {
+    height: 70vh;
   }
 </style>
