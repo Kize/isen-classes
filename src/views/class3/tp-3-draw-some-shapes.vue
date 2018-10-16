@@ -267,10 +267,6 @@
         Figure out a smart way to still generate a random position, but where it is a safe position.
         (meaning, the whole shape will be visible)
       </li>
-      <li>
-        Now to the fun part. Create a constructor <code>Circle</code> that should inherit from Shape.
-        It should have a property radius, initialized to an integer, for example: <code>25</code>.
-      </li>
     </ol>
 
     <h3>Rules</h3>
@@ -286,7 +282,7 @@
     <p>Same as the first exercise.</p>
 
 
-    <!--EXERCISE 4-->
+    <!--EXERCISE 5-->
     <hr>
     <h2 id="ex-5">Bonus (optional)</h2>
     <h3>Learning goals</h3>

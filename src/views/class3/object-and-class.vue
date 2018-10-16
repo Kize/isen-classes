@@ -57,10 +57,13 @@ new testContext(this);                // => false
 var mainHero = {
   name: 'Dominick Cobb',
   greet: function() {
-    console.log('Hello, I am ' + this.name + '.');      // => Hello, I am Dominick Cobb
+    console.log('Hello, I am ' + this.name + '.');
   }
 };
-      </code></pre>
+
+mainHero.greet();                     // => Hello, I am Dominick Cobb.
+var greet = mainHero.greet;
+greet(); </code></pre>
     </slide>
 
     <slide class="slide" enter='bounceInRight'>
