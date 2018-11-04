@@ -111,5 +111,16 @@ export default new Router({
       name: 'tp3',
       component: () => import('./views/class3/tp-3-draw-some-shapes.vue'),
     },
+
+    // CLASS 4
+    {
+      path: '/async/:slide/:step',
+      name: 'async',
+      component: () => import('./views/class4/async.vue'),
+    },
+    {
+      path: '/async',
+      redirect: '/async/1/1',
+    },
   ],
 });

@@ -63,17 +63,17 @@
 
         <!--CLASS 4-->
         <div class="course-container">
-          <h2 class="course-title">Cours 4 : Asynchronous Programming + NodeJS</h2>
+          <h2 class="course-title">Cours 4 : Asynchronous Programming</h2>
           <ul class="course-list">
             <li>
-              <router-link to="/">In progress...</router-link>
+              <router-link to="/async">Do that, I'll wait.</router-link>
             </li>
           </ul>
         </div>
 
         <!--CLASS 5-->
         <div class="course-container">
-          <h2 class="course-title">Cours 5 : Testing</h2>
+          <h2 class="course-title">Cours 5 : NodeJS & Modules</h2>
           <ul class="course-list">
             <li>
               <router-link to="/">In progress...</router-link>
@@ -83,7 +83,7 @@
 
         <!--CLASS 6-->
         <div class="course-container">
-          <h2 class="course-title">Cours 6 : Modules + TypeScript</h2>
+          <h2 class="course-title">Cours 6 : Testing</h2>
           <ul class="course-list">
             <li>
               <router-link to="/">In progress...</router-link>
