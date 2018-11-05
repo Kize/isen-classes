@@ -69,6 +69,8 @@
               <router-link to="/async">Do that, I'll wait.</router-link>
             </li>
           </ul>
+
+          <router-link to="/tp4-myokom" class="tp-link">Lab 4: Make your own kind of Music</router-link>
         </div>
 
         <!--CLASS 5-->

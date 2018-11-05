@@ -122,5 +122,10 @@ export default new Router({
       path: '/async',
       redirect: '/async/1/1',
     },
+    {
+      path: '/tp4-myokom',
+      name: 'tp4',
+      component: () => import('./views/class4/tp-4-myokom.vue'),
+    },
   ],
 });
