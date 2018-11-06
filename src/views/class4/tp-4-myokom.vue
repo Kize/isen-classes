@@ -55,10 +55,10 @@
     <h4>Requirements</h4>
     <ul>
       <li>Install <a href="http://nodejs.org/">nodejs</a>. Take the latest LTS version.</li>
-      <li>Download the archive given.</li>
+      <li>Download the <a href="https://github.com/Kize/isen-classes/blob/master/labs-files/tp4-src.tar.gz">archive</a>.</li>
       <li>Install the modules. Just go to the project root and type <code>npm ci</code>.</li>
       <li>Start the server. Just type <code>npm start</code> in the project root.</li>
-      <li>You should see an ASCII are and the url at which the project can be browsed.</li>
+      <li>You should see an ASCII art and the url at which the project can be browsed.</li>
       <li>Create a directory named <code>music</code> in the project root directory and add music directories and files
         into it.
       </li>
@@ -69,6 +69,11 @@
         <a href="https://freesound.org/">freesound</a>.
       </li>
     </ul>
+
+    <p>
+      <strong>BE AWARE: </strong> when you modify a file, reload the page with <kbd>CTRL</kbd> + <kbd>F5</kbd>.
+      Otherwise, the browser may use its cache to avoid to reload the file, even if it has changed.
+    </p>
 
     <!--EXERCISE 1-->
     <hr>
@@ -108,9 +113,12 @@
 
     <h3>Deliveries</h3>
 
-    <strong>For this lab, commit the following files one time for the all exercises, bonus included.</strong>
+    <p>For this lab, commit <strong>ONLY</strong> the following files one time for the all exercises, bonus included.</p>
+    <p>Those files corresponds to the <code>public</code> directory,
+      if you send me the whole project, with your musics, I won't correct it.
+    </p>
     <br>
-    <br>
+
     <article class="delivery-file html">myokom.html</article>
     <article class="delivery-file html">myokom-help.html</article>
     <article class="delivery-file js">myokom-client.js</article>
@@ -206,11 +214,11 @@
       </li>
     </ul>
 
-    <pre v-highlightjs><code class="html">&lt;a class="dir" href="/Anitek/">Anitek&lt;/a>
+    <pre v-highlightjs><code class="html">&lt;a class="dir" href="/Lyre-le-temps/">Lyre-le-temps&lt;/a>
 &lt;!-- and so on -->
 
-&lt;button class="track" data-track-idx="0">&lt;span class="track-name">01 - Merlot Downer&lt;/span>&lt;/button>
-&lt;button class="track" data-track-idx="1">&lt;span class="track-name">02 - Dormouse&lt;/span>&lt;/button>
+&lt;button class="track" data-track-idx="0">&lt;span class="track-name">Milky Chance - Sweet Sun&lt;/span>&lt;/button>
+&lt;button class="track" data-track-idx="1">&lt;span class="track-name">ELEPHANZ - Time For A Change&lt;/span>&lt;/button>
 &lt;!-- and so on --></code></pre>
 
     <ul>
@@ -226,7 +234,7 @@
       <li>If the pathname is <code>/</code>, you'll do a GET on <code>/browse/</code>.
         If the pathname is <code>/Lyre-le-temps</code>, you'll do a GET on <code>/browse/Lyre-le-temps/</code>.
       </li>
-      <!--<li>Keep the information object in memory, it will be useful after...</li>-->
+      <li>Keep the information object in memory, it will be useful after...</li>
     </ul>
 
     <h3>Rules</h3>
@@ -416,7 +424,7 @@ export default {
   methods: {
     restoreUrl() {
       setTimeout(() => {
-        this.$router.push('/tp3-draw-some-shapes');
+        this.$router.push('/tp4-myokom');
       }, 1);
     },
   },
