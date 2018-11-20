@@ -98,7 +98,7 @@ console.log(perfectNumber);
     </slide>
 
     <slide class="slide" enter='bounceInRight'>
-      <h2>Require/exports</h2>
+      <h2>Require()</h2>
 
       <div class="list-container">
         <ul class="no-dot-list">
@@ -107,7 +107,7 @@ console.log(perfectNumber);
           <li>The path is relative to the working directory</li>
           <li>
             If the path doesn't start with <code>./</code> or <code>../</code>,
-            require() will search in the <code>Node.js kernel</code>, or in the <code>node_modules</code> directory.
+            require() will search in the <code>Node.js kernel</code>, or in the <code>node_modules</code> directory
           </li>
         </ul>
       </div>
@@ -129,22 +129,12 @@ console.log(perfectNumber);
     <slide class="slide" enter='bounceInRight'>
       <h2>Some <code>NPM</code> commands</h2>
 
-      <div class="list-container">
-        <ul class="no-dot-list">
-          <li>
-            <pre v-highlightjs><code class="bash">npm install my-package         # npm i for short syntax</code></pre>
-          </li>
-          <li>
-            <pre v-highlightjs><code class="bash">npm install -g my-package</code></pre>
-          </li>
-          <li>
-            <pre v-highlightjs><code class="bash">npm update</code></pre>
-          </li>
-          <li>
-            <pre v-highlightjs><code class="bash">npm remove</code></pre>
-          </li>
-        </ul>
-      </div>
+      <pre v-highlightjs><code class="bash">npm install</code></pre>
+      <pre v-highlightjs><code class="bash">npm install --save my-package</code></pre>
+      <pre v-highlightjs><code class="bash">npm install -g my-package</code></pre>
+      <pre v-highlightjs><code class="bash">npm update</code></pre>
+      <pre v-highlightjs><code class="bash">npm remove</code></pre>
+      <pre v-highlightjs><code class="bash">npm run cmd</code></pre>
     </slide>
 
     <slide class="slide" enter='bounceInRight'>
@@ -269,42 +259,42 @@ app.listen(1234, function () {
 </template>
 
 <script>
-import eagle from 'eagle.js';
-import { initGamepad, resetGamepad } from '../../utils/gamepad-service';
+  import eagle from 'eagle.js';
+  import { initGamepad, resetGamepad } from '../../utils/gamepad-service';
 
-export default {
-  mixins: [
-    eagle.slideshow,
-  ],
-  name: 'template',
-  created() {
-    this.updateSlides();
+  export default {
+    mixins: [
+      eagle.slideshow,
+    ],
+    name: 'template',
+    created() {
+      this.updateSlides();
 
-    initGamepad(this.nextStep, this.previousStep);
-  },
-  methods: {
-    updateSlides() {
-      this.currentSlideIndex = +this.$route.params.slide;
-      this.$nextTick(() => {
-        this.step = +this.$route.params.step;
-      });
+      initGamepad(this.nextStep, this.previousStep);
     },
-    updateURL() {
-      this.$router.push(`/node.js/${this.currentSlideIndex}/${this.step}`);
+    methods: {
+      updateSlides() {
+        this.currentSlideIndex = +this.$route.params.slide;
+        this.$nextTick(() => {
+          this.step = +this.$route.params.step;
+        });
+      },
+      updateURL() {
+        this.$router.push(`/node.js/${this.currentSlideIndex}/${this.step}`);
+      },
     },
-  },
-  props: {
-    mouseNavigation: false,
-  },
-  watch: {
-    $route: 'updateSlides',
-    step: 'updateURL',
-    currentSlideIndex: 'updateURL',
-  },
-  destroyed() {
-    resetGamepad();
-  },
-};
+    props: {
+      mouseNavigation: false,
+    },
+    watch: {
+      $route: 'updateSlides',
+      step: 'updateURL',
+      currentSlideIndex: 'updateURL',
+    },
+    destroyed() {
+      resetGamepad();
+    },
+  };
 </script>
 
 <style scoped lang="scss">
