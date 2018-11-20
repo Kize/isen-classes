@@ -17,7 +17,7 @@
   }
 
   #menu-home {
-    position: absolute;
+    position: fixed;
     top: 2em;
     left: 2em;
     z-index: 100;

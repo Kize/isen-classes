@@ -75,12 +75,14 @@
 
         <!--CLASS 5-->
         <div class="course-container">
-          <h2 class="course-title">Cours 5 : NodeJS & Modules</h2>
+          <h2 class="course-title">Cours 5 : Node.js (+ npm)</h2>
           <ul class="course-list">
             <li>
-              <router-link to="/">In progress...</router-link>
+              <router-link to="/node.js/1/1">Node.js</router-link>
             </li>
           </ul>
+
+          <router-link to="/tp5-gif-it" class="tp-link">Lab 5: Build your on server.</router-link>
         </div>
 
         <!--CLASS 6-->

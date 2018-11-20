@@ -156,7 +156,7 @@ export default {
   methods: {
     restoreUrl() {
       setTimeout(() => {
-        this.$router.push('/tp3-draw-some-shapes');
+        this.$router.push('/tp6');
       }, 1);
     },
   },

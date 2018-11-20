@@ -127,5 +127,21 @@ export default new Router({
       name: 'tp4',
       component: () => import('./views/class4/tp-4-myokom.vue'),
     },
+
+    // CLASS 5
+    {
+      path: '/node.js/:slide/:step',
+      name: 'node.js',
+      component: () => import('./views/class5/node.js.vue'),
+    },
+    {
+      path: '/node.js',
+      redirect: '/node.js/1/1',
+    },
+    {
+      path: '/tp5-gif-it',
+      name: 'tp5',
+      component: () => import('./views/class5/tp-5-gif-it.vue'),
+    },
   ],
 });
