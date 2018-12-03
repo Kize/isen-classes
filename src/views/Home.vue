@@ -90,9 +90,11 @@
           <h2 class="course-title">Cours 6 : Testing</h2>
           <ul class="course-list">
             <li>
-              <router-link to="/">In progress...</router-link>
+              <router-link to="/tests-tests-tests">Tests, tests, tests...</router-link>
             </li>
           </ul>
+
+          <router-link to="/tp6" class="tp-link">Lab 6: Testing</router-link>
         </div>
       </div>
 
@@ -136,7 +138,7 @@ export default {
       padding: 0 24px;
 
       .courses-left, .courses-right {
-        width: 50%;
+        width: 49%;
       }
       .course-container {
         text-align: left;

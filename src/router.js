@@ -143,5 +143,21 @@ export default new Router({
       name: 'tp5',
       component: () => import('./views/class5/tp-5-gif-it.vue'),
     },
+
+    // CLASS 6
+    {
+      path: '/tests-tests-tests/:slide/:step',
+      name: 'tests-tests-tests',
+      component: () => import('./views/class6/tests-tests-tests.vue'),
+    },
+    {
+      path: '/tests-tests-tests',
+      redirect: '/tests-tests-tests/1/1',
+    },
+    {
+      path: '/tp6',
+      name: 'tp6',
+      component: () => import('./views/class6/tp-6.vue'),
+    },
   ],
 });

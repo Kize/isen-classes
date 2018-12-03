@@ -2,7 +2,7 @@
   <section class="main-content">
     <article class="tp-background">
     </article>
-    <h1>Make your own kind of Music</h1>
+    <h1>Testing</h1>
 
     <img src="" class="tp-img">
 
@@ -10,7 +10,7 @@
       <p>Table of content</p>
       <ul>
         <li>
-          <a href="#ex-1" v-on:click="restoreUrl">Getting some help (no Jquery)</a>
+          <a href="#ex-1" v-on:click="restoreUrl">FizzBuzz</a>
         </li>
         <li>
           <a href="#ex-2" v-on:click="restoreUrl">Directories and tracks</a>
@@ -39,8 +39,8 @@
 
     <strong>Releases Dates:</strong>
     <ul>
-      <li>First group: 1542236399053</li>
-      <li>Second group: 1542841199053</li>
+      <li>First group: 1544828399368</li>
+      <li>Second group: 1545433199368</li>
     </ul>
 
     <p>The lesson contains lots of references to help you find the solution.
@@ -48,37 +48,65 @@
     <p>Remember that the web is your friend ;-)</p>
     <p>Have fun !</p>
 
-    <!--REQUIREMENTS-->
-    <h4>Requirements</h4>
-
     <!--EXERCISE 1-->
     <hr>
-    <h2 id="ex-1">Getting some help (no Jquery)</h2>
+    <h2 id="ex-1">FizzBuzz</h2>
     <h3>Learning goals</h3>
+    <ol>
+      <li>Practice TDD</li>
+      <li>Write unit tests</li>
+      <li>Discover Jest</li>
+    </ol>
 
     <h3>Context</h3>
 
+    <p>
+      You don't always work on fancy applications with GIFs everywhere.
+      Sometimes, you have to write algorithms, and you have to test its.
+    </p>
+
+    <p>
+      In order to practice TDD and unit testing, you will code a modified version of the FizzBuzz game.
+    </p>
 
     <h3>Steps</h3>
+    <ul>
+      <li>Start a new project, install <code>jest</code></li>
+      <li>Create a file called <code>fizzbuzz.js</code>, which exports a method <code>fizzbuzz</code>.</li>
+      <li>Create a file called <code>fizzbuzz.test.js</code>.</li>
+      <li>Write your first test, make it pass, refactor, and go on...</li>
+    </ul>
 
+    <h3>FizzBuzz's rules</h3>
+    <ul>
+      <li>The function takes a number in parameter, and returns a string.</li>
+      <li>The function returns an empty string if no number is provided.</li>
+      <li>
+        Moreover, when it is dividable by 3, add 'fizz' to the result, when it's dividable by 5, add 'buzz'.
+        Otherwise, return the number as a string.
+      </li>
+      <li>
+        For instance, here is a list of expected results, depending on what's given:
+        <ul>
+          <li>given 15, 'fizzbuzz'</li>
+          <li>given 42, 'fizz'</li>
+          <li>given 7, '7'</li>
+          <li>given 9000, 'fizzbuzzfizzbuzzbuzz'</li>
+          <li>given 50, 'buzzbuzz'</li>
+        </ul>
+      </li>
+    </ul>
 
-    <h3>Rules</h3>
+    <h3>Exercise's rules</h3>
+    <ul>
+      <li>No dependency. Only devDependencies are allowed.</li>
+    </ul>
 
     <h3>Deliveries</h3>
 
-    <strong>For this lab, commit the following files one time for the all exercises, bonus included.</strong>
-    <br>
-    <br>
-    <article class="delivery-file html">myokom.html</article>
-    <article class="delivery-file html">myokom-help.html</article>
-    <article class="delivery-file js">myokom-client.js</article>
-    <article class="delivery-file js">jquery-3.3.1.min.js</article>
-    <article class="delivery-file css">myokom.css</article>
-    <article class="delivery-file img">navy-blue.png</article>
-    <article class="delivery-file img">next.png</article>
-    <article class="delivery-file img">pause.png</article>
-    <article class="delivery-file img">previous.png</article>
-    <article class="delivery-file img">play.png</article>
+    <article class="delivery-file js">fizzbuzz.js</article>
+    <article class="delivery-file js">fizzbuzz.test.js</article>
+    <article class="delivery-file img">package.json</article>
 
 
     <!--EXERCISE 2-->
