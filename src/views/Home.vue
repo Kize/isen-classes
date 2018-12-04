@@ -94,7 +94,7 @@
             </li>
           </ul>
 
-          <router-link to="/tp6" class="tp-link">Lab 6: Testing</router-link>
+          <router-link to="/tp6" class="tp-link">Lab 6: Show me the money</router-link>
         </div>
       </div>
 

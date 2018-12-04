@@ -107,13 +107,13 @@ if (Math.sqrt(input) === expectedOutput) {
       </div>
     </slide>
 
-    <slide class="slide" enter='bounceInRight'>
+    <slide class="slide" enter='bounceInRight' steps="2">
       <h2>Can I have some tools ?</h2>
 
       <div class="slide-content">
         <pre v-highlightjs><code class="bash">$ npm i -D jest</code></pre>
 
-        <pre v-highlightjs><code class="javascript">// half.js
+        <pre v-highlightjs v-if="step > 1"><code class="javascript">// half.js
 funtion half(number) {
   return number / 2;
 }
@@ -121,7 +121,7 @@ funtion half(number) {
 module.exports = half;
       </code></pre>
 
-        <pre v-highlightjs><code class="javascript">// half.test.js
+        <pre v-highlightjs v-if="step > 1"><code class="javascript">// half.test.js
 const half = require('./half').half;
 
 describe('Testing half service:', function () {

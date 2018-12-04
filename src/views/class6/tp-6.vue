@@ -13,16 +13,10 @@
           <a href="#ex-1" v-on:click="restoreUrl">FizzBuzz</a>
         </li>
         <li>
-          <a href="#ex-2" v-on:click="restoreUrl">Directories and tracks</a>
+          <a href="#ex-2" v-on:click="restoreUrl">Show me the money.</a>
         </li>
         <li>
-          <a href="#ex-3" v-on:click="restoreUrl">Let's play some Music</a>
-        </li>
-        <li>
-          <a href="#ex-4" v-on:click="restoreUrl">History</a>
-        </li>
-        <li>
-          <a href="#ex-5" v-on:click="restoreUrl">Bonus (optional)</a>
+          <a href="#ex-3" v-on:click="restoreUrl">Bonus (optional)</a>
         </li>
       </ul>
     </nav>
@@ -111,69 +105,161 @@
 
     <!--EXERCISE 2-->
     <hr>
-    <h2 id="ex-2">Directories and tracks</h2>
+    <h2 id="ex-2">Show me the money</h2>
     <h3>Learning goals</h3>
+    <ol>
+      <li>Become a master tester with Jest</li>
+      <li>Learn how to use mocks</li>
+      <li>Test asynchronous functions</li>
+    </ol>
 
     <h3>Context</h3>
+    <p>
+      Today we'll write an small app to convert an amount of money in one currency, into another.
+      In this exercise, the idea is to create services to get change rates, and convert money.
+    </p>
+    <p>In the next one, we'll do an express app to use those services.</p>
 
     <h3>Steps</h3>
+    <h4>Init</h4>
+    <ol>
+      <li>Start a new Nodejs project, with jest installed as a DevDependency.</li>
+      <li>
+        Create a file called <code>convert.service.js</code>,
+        that exports an object containing a method, called <code>convert</code>.
+        <br> This method has 3 arguments:
+        <code>amount</code>, <code>sourceCurrency</code>, <code>destinationCurrency</code>.
+        <br> Create the test file for this service.
+      </li>
+      <li>
+        Create a file called <code>change-rate.service.js</code>,
+        that exports an object containing 2 methods, called <code>getChangeRates</code>, <code>getChangeRate</code>.
+        <br> The first method has 1 argument: <code>sourceCurrency</code>. The second one has two arguments:
+        <code>sourceCurrency</code>, <code>destinationCurrency</code>.
+        <br> Create the test file for this service.
+      </li>
+    </ol>
+
+    <h4>Convert</h4>
+    <ol>
+      <li>
+        Implement the <code>convert</code> method in <i class="accent">TDD</i>, following those specifications :
+        <ul>
+          <li>It always returns a <code>Promise</code> instance, which can be either resolved or rejected.</li>
+          <li>When resolved, the <code>convert</code> method will return the amount in the destination currency asked.</li>
+          <li>Handle default errors if parameters aren't correctly provided, by rejecting the promise.</li>
+          <li>
+            At some point, it should call the method <code>getChangeRate</code>
+            from the <i class="accent">class-rate.service.js</i>.
+            <br> This method is not implemented yet, but we don't care, because it will be mocked in our tests.
+            You only need to know that this method always returns a <code>Promise</code>, that returns the
+            rate asked when resolved.
+            <br> So, when you test the method <code>convert</code>,
+            you don't want to test the method <code>getChangeRate</code>,
+            mock it each time you need, with the rate you need.
+          </li>
+        </ul>
+
+      </li>
+    </ol>
+
+    <h4>GetChangeRate</h4>
+    <ol>
+      <li>
+        Implement the <code>getChangeRate</code> method in <i class="accent">TDD</i>, following those specifications :
+        <ul>
+          <li>It always returns a <code>Promise</code> instance, which can be either resolved or rejected.</li>
+          <li>When resolved, it returns the rate asked, depending on rates provided by <code>getChangeRates</code>.</li>
+          <li>It can return a rejected promise if parameters are invalid.</li>
+          <li>
+            As the method <code>getChangeRates</code> is not implemented yet,
+            you should assume that it will return a promise, providing a json liking that :
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+    <pre v-highlightjs><code class="json">{
+  "base": "EUR",
+  "rates": {
+    "CAD": 1.4931,
+    "PHP": 59.41,
+    "HRK": 7.4038,
+    "NOK": 9.6893,
+    "USD": 1.1332,
+    "THB": 37.152,
+    "SEK": 10.2355,
+    "CNY": 7.8074,
+    "CHF": 1.1323,
+    "INR": 79.791
+    // and so on...
+  }
+}</code></pre>
+
+    <p>
+      The base is depending on the given parameter, the <code>sourceCurrency</code>.
+    </p>
+
+    <p>
+      In your tests, do as before, mock the method not implemented (<code>getChangeRates</code>),
+      as you don't want to test it, you want to test <code>getChangeRate</code>.
+    </p>
+
+    <h4>GetChangeRates</h4>
+    <ol>
+      <li>Install node-fetch as a dependency.</li>
+      <li>
+        Use this url to call the API, and retrieve the list of rates:
+        <br> <code>https://api.exchangeratesapi.io/latest?base=USD</code>
+        <br> <i class="accent">Note</i>: replace 'USD' by the sourceCurrency argument,
+        in order make it easier to retrieve the rate.
+      </li>
+      <li>To sum up, this method should return a promise, resolving a json looking like the on above.</li>
+      <li>
+        Do you think it is pertinent to write unit tests for this method ?
+        If you don't, argue why in comments above the method.
+      </li>
+    </ol>
 
     <h3>Rules</h3>
+    <p>No dependency allowed, except <code>node-fetch</code>.</p>
 
     <h3>Deliveries</h3>
+    <article class="delivery-file js">convert.service.js</article>
+    <article class="delivery-file js">convert.service.test.js</article>
+    <article class="delivery-file js">change-rate.service.js</article>
+    <article class="delivery-file js">change-rate.service.test.js</article>
+    <article class="delivery-file img">package.json</article>
+
 
     <p>Same as the first exercise.</p>
 
 
     <!--EXERCISE 3-->
     <hr>
-    <h2 id="ex-3">Let's play some Music</h2>
+    <h2 id="ex-3">Bonus (optional)</h2>
     <h3>Learning goals</h3>
+    <ul>
+      <li>Practice building express apps.</li>
+      <li>Practice writing complex algorithms</li>
+    </ul>
 
     <h3>Context</h3>
-
-    <h3>Steps</h3>
-
-    <h3>Rules</h3>
-
-    <h3>Deliveries</h3>
-
-    <p>Same as the first exercise.</p>
-
-
-    <!--EXERCISE 4-->
-    <hr>
-    <h2 id="ex-4">History</h2>
-    <h3>Learning goals</h3>
-
-    <h3>Context</h3>
-
-    <h3>Steps</h3>
-
-
-    <h3>Rules</h3>
-
-    <h3>Deliveries</h3>
-
-    <p>Same as the first exercise.</p>
-
-
-    <!--EXERCISE 5-->
-    <hr>
-    <h2 id="ex-5">Bonus (optional)</h2>
-    <h3>Learning goals</h3>
-
-
-    <h3>Context</h3>
-
+    <p>Well, you have your services, but you don't have the server.</p>
+    <p>Build a Nodejs server, exposing those features, and more !</p>
 
     <h3>Ideas</h3>
-
-    <h3>Rules</h3>
-
+    <ul>
+      <li>Add a route to return rates, depending on a source Currency.</li>
+      <li>Add a route to return the conversion of a amount in another currency. (ex: 10 EUR => xUSD)</li>
+      <li>
+        Add a route to compute complex conversions.
+        For instance, if I have 5 EUR + 6 USD, how many have I got in CAD ?
+      </li>
+    </ul>
 
     <h3>Deliveries</h3>
-    <p>Same as the first exercise.</p>
+
   </section>
 </template>
 
@@ -195,7 +281,8 @@ export default {
   @import '../../styles/colors';
 
   .tp-background {
-    background: url('../../assets/bg-crossword.png') repeat;
+    background: url('./assets/money.png') repeat;
+    opacity: 0.7;
     position: fixed;
     top: 0;
     bottom: 0;
